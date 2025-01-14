@@ -23,7 +23,7 @@ async function getVillagerByName(villagerName) {
     const villagers = await getVillagers()
     for (let i = 0; i < villagers.length; i++) {
         const currentVillager = villagers[i];
-        const currentVillagerNameMatch = currentVillager.name === villagerName
+        const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase() //ensuring match is not case sensitive 
         if (currentVillagerNameMatch) {
             return currentVillager
         }
