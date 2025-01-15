@@ -50,13 +50,15 @@ function displayErrors() {
 
 function randomVillager() {
     const random = Math.floor(Math.random() * globalVillagerArray.length);
-    console.log(random, globalVillagerArray[random]);
+    const randVillager = globalVillagerArray[random]
+    console.log(random, randVillager);
     const output = document.getElementById("demo");
     output.innerHTML = `<ul>
-    <li>${JSON.stringify(globalVillagerArray[random].name)}</li> 
-    <li>${JSON.stringify(globalVillagerArray[random].species)}</li>
-    <li>${JSON.stringify(globalVillagerArray[random].gender)}</li>
-    <li>${JSON.stringify(globalVillagerArray[random].personality)}</li></ul>`
+    <li>${randVillager.name}</li> 
+    <img src="${randVillager.photoImage}">
+    <li>${randVillager.species}</li>
+    <li>${randVillager.gender}</li>
+    <li>${randVillager.personality}</li></ul>`
 }
 
 // (i) look through the documents
