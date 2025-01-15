@@ -48,12 +48,15 @@ function displayErrors() {
 
 }
 
-function randomVillager() {
-    const random = Math.floor(Math.random() * globalVillagerArray.length);
-    const randVillager = globalVillagerArray[random]
-    console.log(random, randVillager);
+function showRandomVillager() {
+    const randVillager = getRandomVillager()
     const output = document.getElementById("demo");
-    output.innerHTML = `<ul>
+    output.innerHTML = createVillagerComponent(randVillager)
+}
+
+
+function createVillagerComponent(randVillager) {
+    return `<ul>
     <li>${randVillager.name}</li> 
     <img src="${randVillager.photoImage}">
     <li>${randVillager.species}</li>
@@ -61,6 +64,12 @@ function randomVillager() {
     <li>${randVillager.personality}</li></ul>`
 }
 
+function getRandomVillager() {
+    const random = Math.floor(Math.random() * globalVillagerArray.length)
+    const randVillager = globalVillagerArray[random]
+    console.log(random, randVillager)
+    return randVillager
+}
 // (i) look through the documents
 // (ii) get the name value from the current villager
 // (iii) see if villager's name equals the name that was searched for (consider fuzzy and partial matching later)
