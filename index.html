@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <header></header> 
+    <header><h1>Meet the Villagers</h1></header> 
     <section>
         <div id="searchwrap">
             <input type="text" name="searchbar" id="searchbar" placeholder="Search villagers by name, birthday, species etc."
         </div>
+        <ul id="villagersList"></ul>
     </section>
+    <button onclick="randomVillager()" id="randomButton">Random Villager!</button>
+<p id="demo"></p>
 </body>
 </html>

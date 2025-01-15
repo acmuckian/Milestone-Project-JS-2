@@ -1,0 +1,8 @@
+@import url(https://db.onlinewebfonts.com/c/cd1810fafebbd3df4964112052edf871?family=FinkHeavy); 
+
+h1 {
+    font-family:'FinkHeavy', Arial, Helvetica, sans-serif;
+    text-align: middle;
+    color: #a0a019;
+    font-size: 4em;
+}

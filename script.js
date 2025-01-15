@@ -48,6 +48,16 @@ function displayErrors() {
 
 }
 
+function randomVillager() {
+    const random = Math.floor(Math.random() * globalVillagerArray.length);
+    console.log(random, globalVillagerArray[random]);
+    const output = document.getElementById("demo");
+    output.innerHTML = `<ul>
+    <li>${JSON.stringify(globalVillagerArray[random].name)}</li> 
+    <li>${JSON.stringify(globalVillagerArray[random].species)}</li>
+    <li>${JSON.stringify(globalVillagerArray[random].gender)}</li>
+    <li>${JSON.stringify(globalVillagerArray[random].personality)}</li></ul>`
+}
 
 // (i) look through the documents
 // (ii) get the name value from the current villager
