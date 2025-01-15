@@ -49,19 +49,19 @@ function displayErrors() {
 }
 
 function showRandomVillager() {
-    const randVillager = getRandomVillager()
-    const output = document.getElementById("demo");
-    output.innerHTML = createVillagerComponent(randVillager)
+    const randVillager = getRandomVillager() // gets a villager randomly from the array 
+    const output = document.getElementById("demo"); // getting the demo element by id and assigning it to the output const 
+    output.innerHTML = createVillagerComponent(randVillager) // 
 }
 
 
-function createVillagerComponent(randVillager) {
+function createVillagerComponent(villager) {
     return `<ul>
-    <li>${randVillager.name}</li> 
-    <img src="${randVillager.photoImage}">
-    <li>${randVillager.species}</li>
-    <li>${randVillager.gender}</li>
-    <li>${randVillager.personality}</li></ul>`
+    <li>${villager.name}</li> 
+    <img src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">
+    <li>${villager.species}</li>
+    <li>${villager.gender}</li>
+    <li>${villager.personality}</li></ul>`
 }
 
 function getRandomVillager() {
@@ -69,6 +69,59 @@ function getRandomVillager() {
     const randVillager = globalVillagerArray[random]
     console.log(random, randVillager)
     return randVillager
+}
+function getVillagersSlice(start, end) {
+    return globalVillagerArray.slice(start, end)
+}
+
+function displayAllVillagers() {
+    // getting a subset of the villagers only from the whole array 
+    const villagerSubset = getVillagersSlice(0, 50);
+    // (i) create divs of the villagers 
+    //   const villagerElements = villagerSubset.map(createVillagerComponent)
+    const villagerElements = villagerSubset.map((villager) => {
+        const villagerEl = createVillagerComponent(villager)
+        return `<div>${villagerEl}</div>`
+    })
+    const villagerListComponent = villagerElements.join('');
+    const elementId = "villagersList"
+    renderElement(elementId, villagerListComponent)
+    // (ii) include their name, image, species, gender and personality in the div
+}
+// this is a function to return a page of villagers
+function getVillagerPage(page, pageSize) {
+    const sliceStart = (page - 1) * pageSize
+    const sliceEnd = sliceStart + pageSize
+    console.log(sliceStart, sliceEnd)
+    const result = globalVillagerArray.slice(sliceStart, sliceEnd);
+    return result
+}
+console.log(getVillagerPage(1, 5))
+function getVillagersOffset(offset, limit) {
+
+}
+
+function renderElement(elementId, villagerListComponent) {
+    const output = document.getElementById(elementId)
+    output.innerHTML = villagerListComponent
+}
+function runExperiment() {
+
+    const totalPages = 5
+    const firstPage = 1
+    const pageSize = 50
+    //   console.log(getVillagerPage(1, 5))
+    // console.log(getVillagerPage(2, 5))
+    // console.log(getVillagerPage(3, 5))
+    // console.log(getVillagerPage(4, 5))
+    printVillagerPages(firstPage, totalPages, pageSize)
+}
+
+function printVillagerPages(firstPage, totalPages, pageSize) {
+    for (let i = firstPage; i <= totalPages; i++) {
+
+        console.log(getVillagerPage(i, pageSize))
+    }
 }
 // (i) look through the documents
 // (ii) get the name value from the current villager
