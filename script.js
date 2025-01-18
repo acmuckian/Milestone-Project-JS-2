@@ -9,21 +9,26 @@ async function loadVillagers() {
 // this is an IIFE (immediately invoked function expression) that will run the function loadVillagers() as soon as the script is loaded and populate the globalVillagerArray with the data
 // to get the entire dataset 
 (async () => loadVillagers())();
-
-async function getVillagers() {
-    if (globalVillagerArray.length > 0) {
-        return globalVillagerArray
+/**
+ * @returns {Villager[]} - an array of villagers
+ */
+function getVillagers() {
+    if (!globalVillagerArray.length) {
+        loadVillagers();
+        while (!globalVillagerArray.length) {
+            // wait for the globalVillagerArray to be populated
+            // this is a blocking operation to prevent the function from returning an empty array without making the function async
+        }
     }
-
-
-
-    return globalVillagerArray
+    return globalVillagerArray;
 }
-getVillagers()
-// for retrieving individual villagers and searching them by name 
-
-async function getVillagerByName(villagerName) {
-    const villagers = await getVillagers()
+/**
+ *
+ * @param {string} villagerName - the name of the villager to search for
+ * @returns {Villager | undefined} - the villager object if found, otherwise undefined
+ */
+function getVillagerByName(villagerName) {
+    const villagers = getVillagers()
     for (let i = 0; i < villagers.length; i++) {
         const currentVillager = villagers[i];
         const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase() //ensuring match is not case sensitive 
