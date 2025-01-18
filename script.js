@@ -2,13 +2,20 @@
 var globalVillagerArray = []
 /** @returns {Promise<Villager[]>}  - promise that resolves to an array */
 
+async function loadVillagers() {
+    const response = await fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json");
+    globalVillagerArray = await response.json();
+}
+// this is an IIFE (immediately invoked function expression) that will run the function loadVillagers() as soon as the script is loaded and populate the globalVillagerArray with the data
 // to get the entire dataset 
+(async () => loadVillagers())();
+
 async function getVillagers() {
     if (globalVillagerArray.length > 0) {
         return globalVillagerArray
     }
-    const response = await fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
-    globalVillagerArray = await response.json()
+
+
 
     return globalVillagerArray
 }
