@@ -38,6 +38,7 @@ function getVillagerByName(villagerName) {
     }
     console.warn(`No match found for ${villagerName}`)
 }
+
 function villagerBrief(villager) {
     return {
         photoImage: villager.photoImage,
@@ -47,13 +48,6 @@ function villagerBrief(villager) {
         personality: villager.personality,
         birthday: villager.birthday,
     }
-}
-
-function showVillagers() {
-
-}
-function displayErrors() {
-
 }
 
 function showRandomVillager() {
@@ -71,7 +65,7 @@ function createVillagerComponent(villager) {
     // <li>${villager.species}</li>
     // <li>${villager.gender}</li>
     // <li>${villager.personality}</li></ul>`
-    return `
+    return html `
     <div class="card" style="width: 18rem;"> 
     <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">
         <div class="card-body">
@@ -116,15 +110,16 @@ function getVillagerPage(page, pageSize) {
     const result = globalVillagerArray.slice(sliceStart, sliceEnd);
     return result
 }
-console.log(getVillagerPage(1, 5))
-function getVillagersOffset(offset, limit) {
-
+/**
+ * Assign the innerHTML of an element by its ID
+ *
+ * @param {string} elementId
+ * @param {string} innerHTML
+ */
+function assignInnerHtml(elementId, innerHTML) {
+	document.getElementById(elementId).innerHTML = innerHTML;
 }
 
-function renderElement(elementId, villagerListComponent) {
-    const output = document.getElementById(elementId)
-    output.innerHTML = villagerListComponent
-}
 function runExperiment() {
 
     const totalPages = 9
@@ -136,7 +131,12 @@ function runExperiment() {
     // console.log(getVillagerPage(4, 5))
     printVillagerPages(firstPage, totalPages, pageSize)
 }
-
+/**
+ * Prints all the pages of villagers
+ * @param {number} firstPage - the first page to start from
+ * @param {number} totalPages - the total number of pages
+ * @param {number} pageSize - the number of villagers per page
+ */
 function printVillagerPages(firstPage, totalPages, pageSize) {
     // creates empty results array to hold all the results 
     const results = []
@@ -155,18 +155,35 @@ function printVillagerPages(firstPage, totalPages, pageSize) {
     // destination.innerHTML = 
 
 }
-let villagers = []
-const searchInput = document.getElementById('searchbar');
-searchInput.addEventListener("input", (e) => {
-    const value = e.target.value.toLowerCase()
-    console.log(value)
-    console.log(villagers)
-    villagers.forEach(villager => {
-        const isVisible = villager.name.includes(value) || villager.species.includes(value)
-        villager.element.classList.toggle("hide", !isVisible)
-    })
+/**
+ * Handles the search input event
+ *
+ * @param {Event} e - the event object
+ */
+function handleSearchInput(e) {
+const searchInput = e.target.value
+const villagersArray = getVillagers()
 
-})
+const lowerCaseSearchInput = searchInput.toLowerCase();
+	const results = villagersArray.filter((villagerItem) => {
+		return (
+			villagerItem.name.toLowerCase().includes(lowerCaseSearchInput) ||
+			villagerItem.species.toLowerCase().includes(lowerCaseSearchInput)
+		);
+	});
+	console.log(`${results.length} results found for ${searchInput}`);
+	const resultCards = buildResultCards(results);
+}
+/**
+ * Builds the result cards for the search results
+ * @param {Villager[]} results - the search results
+ * @returns {string[]} - an array of HTML strings representing the search results
+ */
+// Get input element from the DOM
+const searchInput = document.getElementById("searchbar");
+// Add an event listener to the input element
+searchInput.addEventListener("input", handleSearchInput)
+
 fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
     .then(res => res.json())
     .then(data => {
@@ -178,6 +195,81 @@ fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/mast
         let villagerName = villagers.map(villager => villager.name)
         console.log(villagerName)
     })
+
+    /** @typedef {object} Translations
+ * @property {string} sourceSheet
+ * @property {string} id
+ * @property {string} eUde
+ * @property {string} eUen
+ * @property {string} eUit
+ * @property {string} eUnl
+ * @property {string} eUru
+ * @property {string} eUfr
+ * @property {string} eUes
+ * @property {string} uSen
+ * @property {string} uSfr
+ * @property {string} uSes
+ * @property {string} jPja
+ * @property {string} kRko
+ * @property {string} tWzh
+ * @property {string} cNzh
+ * @property {boolean} plural
+ */
+
+/** @typedef {object} Catchphrases
+ * @property {string} sourceSheet
+ * @property {string} id
+ * @property {string} eUde
+ * @property {string} eUen
+ * @property {string} eUit
+ * @property {string} eUnl
+ * @property {string} eUru
+ * @property {string} eUfr
+ * @property {string} eUes
+ * @property {string} uSen
+ * @property {string} uSfr
+ * @property {string} uSes
+ * @property {string} jPja
+ * @property {string} kRko
+ * @property {string} tWzh
+ * @property {string} cNzh
+ * @property {boolean} plural
+ */
+
+/** @typedef {object} Villager
+ * @property {string} sourceSheet
+ * @property {string} name
+ * @property {string} iconImage
+ * @property {string} photoImage
+ * @property {string | null} houseImage
+ * @property {string} species
+ * @property {string} gender
+ * @property {string} personality
+ * @property {string} subtype
+ * @property {string} hobby
+ * @property {string} birthday
+ * @property {string} catchphrase
+ * @property {string} favoriteSong
+ * @property {string} favoriteSaying
+ * @property {string} defaultClothing
+ * @property {string} defaultUmbrella
+ * @property {string} wallpaper
+ * @property {string} flooring
+ * @property {number[]} furnitureList
+ * @property {string[]} furnitureNameList
+ * @property {string} diyWorkbench
+ * @property {string} kitchenEquipment
+ * @property {string} versionAdded
+ * @property {string} nameColor
+ * @property {string} bubbleColor
+ * @property {string} filename
+ * @property {string} uniqueEntryId
+ * @property {Catchphrases} catchphrases
+ * @property {Translations} translations
+ * @property {string[]} styles
+ * @property {string[]} colors
+ * @property {number} defaultClothingInternalId
+ */
 // (i) look through the documents
 // (ii) get the name value from the current villager
 // (iii) see if villager's name equals the name that was searched for (consider fuzzy and partial matching later)
