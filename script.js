@@ -1,34 +1,21 @@
 
-var globalVillagerArray = []
 /** @returns {Promise<Villager[]>}  - promise that resolves to an array */
 
-async function loadVillagers() {
-    const response = await fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json");
-    globalVillagerArray = await response.json();
+async function getVillagers() {
+    const response = await fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json",
+        { cache: "force-cache" }
+    );
+    return await response.json();
+
 }
-// this is an IIFE (immediately invoked function expression) that will run the function loadVillagers() as soon as the script is loaded and populate the globalVillagerArray with the data
+// this is an IIFE (immediately invoked function expression) that will run the function getVillagers() as soon as the script is loaded and making sure there is a cached version
 // to get the entire dataset 
-(async () => await loadVillagers())();
-/**
- * @returns {Villager[]} - an array of villagers
- */
-function getVillagers() {
-    if (!globalVillagerArray.length) {
-        loadVillagers();
-        while (!globalVillagerArray.length) {
-            // wait for the globalVillagerArray to be populated
-            // this is a blocking operation to prevent the function from returning an empty array without making the function async
-        }
-    }
-    return globalVillagerArray;
-}
-/**
- *
- * @param {string} villagerName - the name of the villager to search for
- * @returns {Villager | undefined} - the villager object if found, otherwise undefined
- */
-function getVillagerByName(villagerName) {
-    const villagers = getVillagers()
+(async () => await getVillagers())();
+
+
+
+async function getVillagerByName(villagerName) {
+    const villagers = await getVillagers()
     for (let i = 0; i < villagers.length; i++) {
         const currentVillager = villagers[i];
         const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase() //ensuring match is not case sensitive 
@@ -78,14 +65,15 @@ function createVillagerComponent(villager) {
         </ul></div>`
 }
 
-function getRandomVillager() {
-    const random = Math.floor(Math.random() * globalVillagerArray.length)
-    const randVillager = globalVillagerArray[random]
+async function getRandomVillager() {
+    const VillagerArray = await getVillagers()
+    const random = Math.floor(Math.random() * VillagerArray.length)
+    const randVillager = VillagerArray[random]
     console.log(random, randVillager)
     return randVillager
 }
-function getVillagersSlice(start, end) {
-    return globalVillagerArray.slice(start, end)
+async function getVillagersSlice(start, end) {
+    return (await getVillagers()).slice(start, end)
 }
 
 function displayAllVillagers() {
@@ -103,11 +91,11 @@ function displayAllVillagers() {
     // (ii) include their name, image, species, gender and personality in the div
 }
 // this is a function to return a page of villagers
-function getVillagerPage(page, pageSize) {
+async function getVillagerPage(page, pageSize) {
     const sliceStart = (page - 1) * pageSize
     const sliceEnd = sliceStart + pageSize
     console.log(sliceStart, sliceEnd)
-    const result = globalVillagerArray.slice(sliceStart, sliceEnd);
+    const result = (await getVillagers()).slice(sliceStart, sliceEnd);
     return result
 }
 /**
@@ -160,9 +148,9 @@ function printVillagerPages(firstPage, totalPages, pageSize) {
  *
  * @param {Event} e - the event object
  */
-function handleSearchInput(e, limit = 10) {
+async function handleSearchInput(e, limit = 10) {
     const searchInput = e.target.value
-    const villagersArray = getVillagers()
+    const villagersArray = await getVillagers()
 
     const lowerCaseSearchInput = searchInput.toLowerCase();
     const results = villagersArray.filter((villagerItem) => {
