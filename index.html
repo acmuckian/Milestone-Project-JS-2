@@ -35,15 +35,25 @@
     <section id="main">
         <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
 
-        <button onclick="displayAllVillagers()" id="allButton">Show all Villagers!</button>
+        <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
         <div id="villagersList"></div>
         <button onclick="runExperiment()" id="experimentButton">Experiment</button>
         <p id="intro"></p>
         <p id="demo"></p>
+        <div id="VillagerPage"></div>
         <div id="displayVillagers" class="hidden"></div>
+        <div class="number-input">
+            <button
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"></button>
+            <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
+                onchange="printVillagerPage()">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
+                class="plus"></button>
+        </div>
+
     </section>
     <script src="script.js"></script>
-    <script src="nookipedia.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 /** @returns {Promise<Villager[]>}  - promise that resolves to an array */
 
 async function getVillagers() {
-    const response = await fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json",
+    const response = await fetch("https://raw.githubusercontent.com/acmuckian/animal-crossing-data/refs/heads/master/json/combined/Villagers.min.json",
         { cache: "force-cache" }
     );
     return await response.json();
@@ -37,14 +37,24 @@ function villagerBrief(villager) {
     }
 }
 
-function showRandomVillager() {
-    const randVillager = getRandomVillager() // gets a villager randomly from the array 
-    const output = document.getElementById("demo"); // getting the demo element by id and ag it to the output const 
-    // const intro = document.getElementById("intro")
-    // intro.innerHTML = `Look who it is, it's ${villager.name}!`
-    output.innerHTML = createVillagerComponent(randVillager)
-}
+async function showRandomVillager() {
+    const output = document.getElementById("demo");
+    if (output.style.display === "none") {
+        output.style.display = "block";
+        const randVillager = await getRandomVillager() // gets a villager randomly from the array 
+        // getting the demo element by id and ag it to the output const 
+        // const intro = document.getElementById("intro")
+        // intro.innerHTML = `Look who it is, it's ${villager.name}!`
+        output.innerHTML = createVillagerComponent(randVillager)
+    } else {
+        output.style.display = "none";
+    }
 
+
+}
+/** 
+ * creates a component for a single villager 
+ * */
 function createVillagerComponent(villager) {
     // return `<ul>
     // <li>${villager.name}</li> 
@@ -76,22 +86,33 @@ async function getVillagersSlice(start, end) {
     return (await getVillagers()).slice(start, end)
 }
 
-function displayAllVillagers() {
-    // getting a subset of the villagers only from the whole array 
-    const villagerSubset = getVillagersSlice(0, 50);
-    // (i) create divs of the villagers 
-    //   const villagerElements = villagerSubset.map(createVillagerComponent)
-    const villagerElements = villagerSubset.map((villager) => {
-        const villagerEl = createVillagerComponent(villager)
-        return `<div>${villagerEl}</div>`
-    })
-    const villagerListComponent = villagerElements.join('');
+async function displayAllVillagers() {
     const elementId = "villagersList"
-    renderElement(elementId, villagerListComponent)
-    // (ii) include their name, image, species, gender and personality in the div
+    const toggle = document.getElementById(elementId)
+    if (toggle.style.display === "none") {
+        // list is currently not shown 
+
+        // getting a subset of the villagers only from the whole array 
+        const villagerSubset = await getVillagersSlice(0, 50);
+        // (i) create divs of the villagers 
+        // const villagerElements = villagerSubset.map(createVillagerComponent)
+        const villagerElements = villagerSubset.map((villager) => {
+            const villagerEl = createVillagerComponent(villager)
+            return `<div>${villagerEl}</div>`
+        })
+        const villagerListComponent = villagerElements.join('');
+        assignInnerHtml(elementId, villagerListComponent)
+
+        toggle.style.display = "block";
+    } else {
+        // list is currently shown 
+        toggle.style.display = "none";
+
+    }
 }
+
 // this is a function to return a page of villagers
-async function getVillagerPage(page, pageSize) {
+async function getVillagerPage(page, pageSize = 9) {
     const sliceStart = (page - 1) * pageSize
     const sliceEnd = sliceStart + pageSize
     console.log(sliceStart, sliceEnd)
@@ -119,11 +140,24 @@ function runExperiment() {
     // console.log(getVillagerPage(4, 5))
     printVillagerPages(firstPage, totalPages, pageSize)
 }
+
+
+async function printVillagerPage() {
+    const pageNumber = document.getElementById("pagenumber").value
+    const villagerElements = (await getVillagerPage(pageNumber)).map((villager) => {
+        const villagerEl = createVillagerComponent(villager)
+        return `<div>${villagerEl}</div>`
+    })
+    const villagerListComponent = villagerElements.join('');
+    assignInnerHtml("VillagerPage", villagerListComponent)
+}
+printVillagerPage()
 /**
  * Prints all the pages of villagers
  * @param {number} firstPage - the first page to start from
  * @param {number} totalPages - the total number of pages
  * @param {number} pageSize - the number of villagers per page
+ * @deprecated 
  */
 function printVillagerPages(firstPage, totalPages, pageSize) {
     // creates empty results array to hold all the results 
@@ -143,6 +177,7 @@ function printVillagerPages(firstPage, totalPages, pageSize) {
     // destination.innerHTML = 
 
 }
+
 /**
  * Handles the search input event
  *
@@ -187,6 +222,10 @@ function arrayToUl(array) {
 		${wrappedElements.join("")}
 	</ul>`;
 }
+
+// $("allButton").click(function () {
+//     $("demo").toggle();
+// });
 /**
  * Builds the result cards for the search results
  * @param {Villager[]} results - the search results
@@ -200,6 +239,11 @@ function buildVillagerComponentArray(villagers) {
 const searchInput = document.getElementById("searchbar");
 // Add an event listener to the input element
 searchInput.addEventListener("input", handleSearchInput)
+
+
+
+
+
 
 // fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
 //     .then(res => res.json())
