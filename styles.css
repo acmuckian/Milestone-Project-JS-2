@@ -40,11 +40,11 @@
   }
 
   50% {
-    background-color: #6f5527
+    background-color: #6f5527;
   }
 
   100% {
-    background-color: #98712e'}
+    background-color: #98712e;
 
   }
 }
@@ -132,14 +132,22 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
+#pagebuttons {
+  position: relative;
+}
+
 .number-input {
-  border: 2px solid #ddd;
+  border: 2px solid #98712e;
   display: inline-flex;
+  position: absolute;
+  left: 40%;
+  margin-top: 5px;
 }
 
 .number-input,
 .number-input * {
   box-sizing: border-box;
+  background-color: #fae69d;
 }
 
 .number-input button {
@@ -189,10 +197,32 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: sans-serif;
   max-width: 5rem;
   padding: .5rem;
-  border: solid #ddd;
+  border: solid #98712e;
   border-width: 0 2px;
   font-size: 2rem;
   height: 3rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
+  color: #6f5527;
+  font-family: var(--header-font);
+}
+
+#VillagerPage {
+
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: rgb(235, 196, 73);
+  border: rgb(235, 196, 73);
+  text-align: center;
+  font-family: var(--body-font);
+}
+
+.list-group-item {
+  border: none;
+  background-color: #fae69d;
 }

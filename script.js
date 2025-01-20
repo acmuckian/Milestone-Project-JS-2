@@ -62,6 +62,7 @@ function createVillagerComponent(villager) {
     // <li>${villager.species}</li>
     // <li>${villager.gender}</li>
     // <li>${villager.personality}</li></ul>`
+   
     return `
     <div class="card" style="width: 18rem;"> 
     <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">

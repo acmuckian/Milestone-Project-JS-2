@@ -8,4 +8,7 @@ The target audience of Meet the Villagers is primarily fans of the Animal Crossi
 
 ## User Requirements and Expectations
 
+# Acknowledgments and Credits
+https://codepen.io/jamesqquick/pen/XWJxBQv and YouTube video: 
+
 

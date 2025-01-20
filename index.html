@@ -42,15 +42,16 @@
         <p id="demo"></p>
         <div id="VillagerPage"></div>
         <div id="displayVillagers" class="hidden"></div>
-        <div class="number-input">
-            <button
-                onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()" id="backarrow" placeholder=""></button>
-            <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
-                onchange="printVillagerPage()">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
-                class="plus" id="forwardarrow"></button>
+        <div id="pagebuttons">
+            <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
+                    id="backarrow" placeholder=""></button>
+                <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
+                    onchange="printVillagerPage()">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
+                    class="plus" id="forwardarrow"></button>
+            </div>
         </div>
-
     </section>
     <script src="script.js"></script>
 
