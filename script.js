@@ -34,6 +34,7 @@ function villagerBrief(villager) {
         gender: villager.gender,
         personality: villager.personality,
         birthday: villager.birthday,
+
     }
 }
 
@@ -41,10 +42,12 @@ async function showRandomVillager() {
     const output = document.getElementById("demo");
     const villagerList = document.getElementById("villagersList")
     const villagerPage = document.getElementById("VillagerPage")
+    const pagebutton = document.getElementById("pagebuttons")
     if (output.style.display === "none") {
         output.style.display = "block";
         villagerList.style.display = "none";
         villagerPage.style.display = "none";
+        pagebutton.style.display = "none";
         const randVillager = await getRandomVillager() // gets a villager randomly from the array 
         // getting the demo element by id and ag it to the output const 
         // const intro = document.getElementById("intro")
@@ -78,7 +81,8 @@ function createVillagerComponent(villager) {
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Species: ${villager.species}</li>
             <li class="list-group-item">Gender: ${villager.gender}</li>
-            <li class="list-group-item">Personality:${villager.personality}</li>
+            <li class="list-group-item">Personality: ${villager.personality}</li>
+            <li class="list-group-item">Favourite Saying: ${villager.favoriteSaying}</li>
         </ul></div>`
 }
 
@@ -207,7 +211,8 @@ async function handleSearchInput(e, limit = 10) {
     const results = villagersArray.filter((villagerItem) => {
         return (
             villagerItem.name.toLowerCase().includes(lowerCaseSearchInput) ||
-            villagerItem.species.toLowerCase().includes(lowerCaseSearchInput)
+            villagerItem.species.toLowerCase().includes(lowerCaseSearchInput) ||
+            villagerItem.birthday.toLowerCase().includes(lowerCaseSearchInput)
         );
     });
     const resultsSlice = results.slice(0, limit);
@@ -239,9 +244,6 @@ function arrayToUl(array) {
 	</ul>`;
 }
 
-// $("allButton").click(function () {
-//     $("demo").toggle();
-// });
 /**
  * Builds the result cards for the search results
  * @param {Villager[]} results - the search results
@@ -256,10 +258,34 @@ const searchInput = document.getElementById("searchbar");
 // Add an event listener to the input element
 searchInput.addEventListener("input", handleSearchInput)
 
+function renderVillagerBirthday(date) {
+const parts = date.split("/");
+const month = Number(parts[0])
+const day = Number(parts[1])
+return ` ${month}/${day}`;
+}
+async function searchVillagerBirthday() {
+    const day = document.getElementById("day").value
+    const month = document.getElementById("month").value
+    const date = `${month.toString()}/${day.toString()}`
+    console.log(date)
+    const villagersArray = await getVillagers()
+    const results = villagersArray.filter((villagerItem) => {
+        return (
+            villagerItem.birthday.includes(date)
+        );
+    });
+    const resultsSlice = results.slice(0, limit = 10);
 
+    const resultsCount = resultsSlice.length;
+    const totalResultsCount = results.length
 
+    console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
+    const resultCards = buildVillagerComponentArray(resultsSlice);
+    const resultsList = arrayToUl(resultCards);
 
-
+    assignInnerHtml("demo", resultsList);
+}
 
 // fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
 //     .then(res => res.json())

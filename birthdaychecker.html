@@ -24,23 +24,19 @@
             </div>
             <div id="searchwrap">
                 <input type="text" name="searchbar" id="searchbar" data-search
-                    placeholder="Search villagers by name, birthday, species etc." />
+                    placeholder="Insert your birthday in MM/DD format" />
+                   <div id="birthday-input">
+<input type="number" id="month" name="month" min="1" max="12" /> / <input type="number" id="day" name="day" min="1" max="31" />
+<button onclick="searchVillagerBirthday()" id="checkbirthday">Go!</button>
+</div>
             </div>
-            <div id="clickybuttons">
-                <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
-
-                <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
-                <div id="villagersList"></div>
-                <button><a href="birthdaychecker.html">Who shares your birthday?</a></button>
+            <span id="discover">Find out which villager shares your birthday!</span>
             </div>
         </section>
 
     </header>
-    <section>
 
-    </section>
     <section id="main">
-
         <p id="intro"></p>
         <p id="demo"></p>
         <div id="VillagerPage"></div>
@@ -57,7 +53,6 @@
         </div>
     </section>
     <script src="script.js"></script>
-
 </body>
 
 </html>
