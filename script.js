@@ -39,8 +39,12 @@ function villagerBrief(villager) {
 
 async function showRandomVillager() {
     const output = document.getElementById("demo");
+    const villagerList = document.getElementById("villagersList")
+    const villagerPage = document.getElementById("VillagerPage")
     if (output.style.display === "none") {
         output.style.display = "block";
+        villagerList.style.display = "none";
+        villagerPage.style.display = "none";
         const randVillager = await getRandomVillager() // gets a villager randomly from the array 
         // getting the demo element by id and ag it to the output const 
         // const intro = document.getElementById("intro")
@@ -48,6 +52,8 @@ async function showRandomVillager() {
         output.innerHTML = createVillagerComponent(randVillager)
     } else {
         output.style.display = "none";
+        villagerPage.style.display = "grid";
+        
     }
 
 
@@ -88,7 +94,8 @@ async function getVillagersSlice(start, end) {
 }
 
 async function displayAllVillagers() {
-    const elementId = "villagersList"
+    const elementId = "VillagerPage"
+    const demo = document.getElementById("demo")
     const toggle = document.getElementById(elementId)
     if (toggle.style.display === "none") {
         // list is currently not shown 
@@ -104,7 +111,9 @@ async function displayAllVillagers() {
         const villagerListComponent = villagerElements.join('');
         assignInnerHtml(elementId, villagerListComponent)
 
-        toggle.style.display = "block";
+        toggle.style.display = "grid";
+        demo.style.display = "none"
+
     } else {
         // list is currently shown 
         toggle.style.display = "none";
@@ -144,6 +153,9 @@ function runExperiment() {
 
 
 async function printVillagerPage() {
+    const villagerPage = document.getElementById("VillagerPage")
+    // if (villagerPage.style.display === "none") {
+        // villagerPage.style.display === "grid"
     const pageNumber = document.getElementById("pagenumber").value
     const villagerElements = (await getVillagerPage(pageNumber)).map((villager) => {
         const villagerEl = createVillagerComponent(villager)
@@ -151,6 +163,9 @@ async function printVillagerPage() {
     })
     const villagerListComponent = villagerElements.join('');
     assignInnerHtml("VillagerPage", villagerListComponent)
+// } else {
+    villagerPage.style.display === "none";
+// }
 }
 printVillagerPage()
 /**

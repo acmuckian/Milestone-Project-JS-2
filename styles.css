@@ -87,6 +87,12 @@ h1 {
   font-family: var(--body-font);
   text-align: center;
 }
+#clickybuttons {
+  position:absolute;
+  left:40%;
+  top:40%; 
+  text-align:center;
+}
 
 .hidden {
   /*  display: none; */
@@ -104,21 +110,6 @@ button {
   font-family: 'Arvo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5em;
   color: #6f5527;
-}
-
-.my-card {
-  border-radius: 10px;
-  border: none;
-  margin: 10px;
-  background-color: rgba(153, 114, 46, 0.1);
-
-}
-
-.my-card-title {
-  font-family: var(--body-font);
-  font-size: 1.5em;
-  background-color: #f9e190;
-  border-bottom: 1px solid rgba(153, 114, 46, 1);
 }
 
 input[type="number"] {
@@ -140,7 +131,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: 2px solid #98712e;
   display: inline-flex;
   position: absolute;
-  left: 40%;
+  left: 35%;
   margin-top: 5px;
 }
 
@@ -220,6 +211,10 @@ input[type=number]::-webkit-outer-spin-button {
   border: rgb(235, 196, 73);
   text-align: center;
   font-family: var(--body-font);
+  margin:5px; 
+}
+.card:hover, .card:focus {
+  transform: scale(0.9, 0.9); 
 }
 
 .list-group-item {
