@@ -71,8 +71,8 @@ function createVillagerComponent(villager) {
             </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Species: ${villager.species}</li>
-            <li class="list-group-item">${villager.gender}</li>
-            <li class="list-group-item">${villager.personality}</li>
+            <li class="list-group-item">Gender: ${villager.gender}</li>
+            <li class="list-group-item">Personality: ${villager.personality}</li>
         </ul></div>`
 }
 
