@@ -26,6 +26,13 @@
                 <input type="text" name="searchbar" id="searchbar" data-search
                     placeholder="Search villagers by name, birthday, species etc." />
             </div>
+            <div id="clickybuttons">
+                <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
+
+                <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
+                <div id="villagersList"></div>
+                <button onclick="runExperiment()" id="experimentButton">Experiment</button>
+            </div>
         </section>
 
     </header>
@@ -33,11 +40,7 @@
 
     </section>
     <section id="main">
-        <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
 
-        <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
-        <div id="villagersList"></div>
-        <button onclick="runExperiment()" id="experimentButton">Experiment</button>
         <p id="intro"></p>
         <p id="demo"></p>
         <div id="VillagerPage"></div>
