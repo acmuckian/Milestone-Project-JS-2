@@ -56,7 +56,7 @@ async function showRandomVillager() {
     } else {
         output.style.display = "none";
         villagerPage.style.display = "grid";
-        
+
     }
 
 
@@ -71,7 +71,7 @@ function createVillagerComponent(villager) {
     // <li>${villager.species}</li>
     // <li>${villager.gender}</li>
     // <li>${villager.personality}</li></ul>`
-   
+
     return `
     <div class="card" style="width: 18rem;"> 
     <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">
@@ -159,7 +159,7 @@ function runExperiment() {
 async function printVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage")
     // if (villagerPage.style.display === "none") {
-        // villagerPage.style.display === "grid"
+    // villagerPage.style.display === "grid"
     const pageNumber = document.getElementById("pagenumber").value
     const villagerElements = (await getVillagerPage(pageNumber)).map((villager) => {
         const villagerEl = createVillagerComponent(villager)
@@ -167,9 +167,9 @@ async function printVillagerPage() {
     })
     const villagerListComponent = villagerElements.join('');
     assignInnerHtml("VillagerPage", villagerListComponent)
-// } else {
+    // } else {
     villagerPage.style.display === "none";
-// }
+    // }
 }
 printVillagerPage()
 /**
@@ -259,15 +259,15 @@ const searchInput = document.getElementById("searchbar");
 searchInput.addEventListener("input", handleSearchInput)
 
 function renderVillagerBirthday(date) {
-const parts = date.split("/");
-const month = Number(parts[0])
-const day = Number(parts[1])
-return ` ${month}/${day}`;
+    const parts = date.split("/");
+    const month = Number(parts[0])
+    const day = Number(parts[1])
+    return ` ${month}/${day}`;
 }
 async function searchVillagerBirthday() {
     const day = document.getElementById("day").value
     const month = document.getElementById("month").value
-    const date = `${month.toString()}/${day.toString()}`
+    const date = `${parseInt(month)}/${parseInt(day)}`
     console.log(date)
     const villagersArray = await getVillagers()
     const results = villagersArray.filter((villagerItem) => {
@@ -284,11 +284,12 @@ async function searchVillagerBirthday() {
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
     assignInnerHtml("demo", resultsList);
-    let resultMessage 
+    let resultMessage
     if (resultsCount > 0) {
-        resultMessage = `<div="congrats">Congrats! ${villager.name} shares your birthday</div>`
+        const villager = resultsSlice[0];
+        resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`
     } else {
-       resultMessage = "Sorry, no villagers share your birthday!"
+        resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>'
     }
     assignInnerHtml("intro", resultMessage)
 }
