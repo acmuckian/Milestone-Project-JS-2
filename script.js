@@ -220,7 +220,7 @@ async function handleSearchInput(e, limit = 10) {
     const resultsCount = resultsSlice.length;
     const totalResultsCount = results.length
 
-    console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
+    console.log(`${resultsCount} of ${totalResultsCount} results found`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
 
@@ -275,7 +275,7 @@ async function searchVillagerBirthday() {
             villagerItem.birthday.includes(date)
         );
     });
-    const resultsSlice = results.slice(0, limit = 10);
+    const resultsSlice = results.slice(0, 10);
 
     const resultsCount = resultsSlice.length;
     const totalResultsCount = results.length
@@ -283,8 +283,14 @@ async function searchVillagerBirthday() {
     console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
-
     assignInnerHtml("demo", resultsList);
+    let resultMessage 
+    if (resultsCount > 0) {
+        resultMessage = `<div="congrats">Congrats! ${villager.name} shares your birthday</div>`
+    } else {
+       resultMessage = "Sorry, no villagers share your birthday!"
+    }
+    assignInnerHtml("intro", resultMessage)
 }
 
 // fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")

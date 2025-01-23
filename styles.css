@@ -223,13 +223,28 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #discover {
   font-family:var(--header-font);
-  color:#fae69d;
-  border: 1px solid  #fae69d;
+  color:#e2cc7a;
+  border: 1px solid  #e2cc7a;
   border-radius: 15px;
   position:absolute;
-  top: 45%;
+  top: 50%;
   left: 30%; 
-  font: 2rem;
+  font: 2.5rem;
   padding: 10px; 
-  background-color:#fae69d;
+  background-color:#f7f7f7;
+}
+#birthdaycheck {
+  padding: 10px;
+  left: 31%;
+  top: 42%;
+  position: absolute;
+}
+#month, #day {
+  width: 20%; 
+  border-radius: 15px; 
+  background-color: #fff1c0;
+  height: 50px;
+  font-family: var(--body-font); 
+  text-align:center;
+  border: 1px
 }
