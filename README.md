@@ -32,7 +32,7 @@ _Desktop_
 _Tablet_
 
 ![wireframe of the birthdaychecker default on tablet]()
-![wireframe when you search for a vil;ager with a birthday]()
+![wireframe when you search for a villager with a birthday]()
 
 _Mobile_ 
 
