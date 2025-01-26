@@ -60,7 +60,9 @@ _Mobile_
 
 
 # Acknowledgments and Credits
-https://codepen.io/jamesqquick/pen/XWJxBQv and YouTube video: 
-https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices 
 
+* https://codepen.io/jamesqquick/pen/XWJxBQv and YouTube video: 
+* [Stackoverflow thread on using hover and active for mobiles](https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices) 
+* A huge thank you to Joseph Mearman, who was very helpful during this project. 
+* _Javascript in Easy Steps (6th Edition)_ by Mike McGrath - provided a great resource for the randomiser function. 
 
