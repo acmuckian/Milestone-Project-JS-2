@@ -126,7 +126,7 @@ async function displayAllVillagers() {
 }
 
 // this is a function to return a page of villagers
-async function getVillagerPage(page, pageSize = 9) {
+async function getVillagerPage(page, pageSize = 10) {
     const sliceStart = (page - 1) * pageSize
     const sliceEnd = sliceStart + pageSize
     console.log(sliceStart, sliceEnd)
