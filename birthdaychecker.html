@@ -20,7 +20,7 @@
                 <link rel="preload" href="images/yaopey-yong-t8woJfDB1Ec-unsplash.jpg" as="image">
             </div>
             <div id="cover-text">
-                <h1>Meet the Villagers</h1>
+                <h1><a href=index.html>Meet the Villagers</a></h1>
             </div>
             <div id="birthdaycheck">
                 <input type=" number" id="month" name="month" min="1" max="12" /> / <input type="number" id="day"
@@ -38,8 +38,12 @@
     <section id="main">
         <p id="intro"></p>
         <p id="demo"></p>
-        <div id="VillagerPage"></div>
+        <!-- <div id="VillagerPage"></div> -->
         <div id="displayVillagers" class="hidden"></div>
+        <div id="birthdaycheckdefault">
+            <span id="comment">Be sure to insert it as MM/DD when you check! </span>
+            <img src="images/Isabelle_NH.webp" alt="isabelle from animal crossing new horizons" id="isabelle">
+        </div>
         <div id="pagebuttons">
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"

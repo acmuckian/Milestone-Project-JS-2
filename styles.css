@@ -8,9 +8,11 @@
 }
 
 #main {
-  background: url(images/grassfieldbackground.jpg) repeat center center;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9)), url(images/grassfieldbackground.jpg) repeat center center;
   z-index: -1;
-
+  position: relative;
+  padding-top: 1px;
+  height: 610px;
 }
 
 #hero-outer {
@@ -61,10 +63,21 @@
   animation-duration: 5s;
 }
 
+a {
+  text-decoration: none;
+  color: #ebc449;
+}
+
+a:hover,
+a:active {
+  color: #ebc449;
+}
+
 #cover-text:hover,
 #cover-text:focus,
 #searchbar:hover,
-#searchbar:focus {
+#searchbar:focus,
+#searchbar:active {
   transform: scale(1.2, 1.2);
 }
 
@@ -131,10 +144,10 @@ input[type=number]::-webkit-outer-spin-button {
 .number-input {
   border: 2px solid #98712e;
   display: inline-flex;
- /* position: absolute;
+  /* position: absolute;
   left: 35%; */
   margin-top: 5px;
-  margin-left:40%;
+  margin-left: 40%;
 }
 
 .number-input,
@@ -217,7 +230,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .card:hover,
-.card:focus {
+.card:focus,
+.card:active {
   transform: scale(0.9, 0.9);
 }
 
@@ -237,6 +251,12 @@ input[type=number]::-webkit-outer-spin-button {
   font: 2.5rem;
   padding: 10px;
   background-color: #f7f7f7;
+}
+
+#birthdaycheckdefault {
+  position: relative;
+  line-height: 24px;
+  display: block;
 }
 
 #birthdaycheck {
@@ -266,8 +286,43 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #fff1c0;
   border-radius: 15px;
   margin-top: 5px;
+  line-height: 24px;
+
 }
 
+#comment {
+  font-family: var(--body-font);
+  color: #33c53b;
+  border: 2px solid #1aab73;
+  border-radius: 15px;
+  position: inherit;
+  top: -100px;
+  left: 10%;
+  font: 2.5rem;
+  padding: 10px;
+  background-color: #095535;
+}
+
+#isabelle {
+  max-height: 400px;
+  position: inherit;
+  right: -100px;
+}
+
+@media (max-width:810px) {
+  #cover-text {
+    left: 20%;
+  }
+
+  #birthdaycheck {
+    left: 40%;
+  }
+
+  #discover {
+    top: 37%;
+    left: 32%;
+  }
+}
 
 @media (max-width: 375px) {
   #cover-text {
@@ -290,5 +345,18 @@ input[type=number]::-webkit-outer-spin-button {
 
   .number-input {
     margin-left: 22%;
+  }
+
+  /* css for the birthdaychecker html */
+  #birthdaycheck {
+    left: 20%;
+
+  }
+
+  #discover {
+    margin-left: 10%;
+    margin-right: 10%;
+    left: 0;
+    text-align: center;
   }
 }

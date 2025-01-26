@@ -264,7 +264,19 @@ function renderVillagerBirthday(date) {
     const day = Number(parts[1])
     return ` ${month}/${day}`;
 }
+
+function showBirthdayChecker() {
+    const birthdaychecker = document.getElementById("birthdaycheckdefault")
+    birthdaychecker.style.display = "block"
+}
+
+function hideBirthdayChecker() {
+    const birthdaychecker = document.getElementById("birthdaycheckdefault")
+    birthdaychecker.style.display = "none"
+}
+
 async function searchVillagerBirthday() {
+    showBirthdayChecker();
     const day = document.getElementById("day").value
     const month = document.getElementById("month").value
     const date = `${parseInt(month)}/${parseInt(day)}`
@@ -275,6 +287,7 @@ async function searchVillagerBirthday() {
             villagerItem.birthday.includes(date)
         );
     });
+
     const resultsSlice = results.slice(0, 10);
 
     const resultsCount = resultsSlice.length;
@@ -283,6 +296,7 @@ async function searchVillagerBirthday() {
     console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
+    hideBirthdayChecker();
     assignInnerHtml("demo", resultsList);
     let resultMessage
     if (resultsCount > 0) {
@@ -293,6 +307,21 @@ async function searchVillagerBirthday() {
     }
     assignInnerHtml("intro", resultMessage)
 }
+
+function showBirthdayDefault() {
+    const birthdaychecker = document.getElementById("birthdaycheckdefault")
+    const birthdayresults = document.getElementById("demo")
+    if (birthdaychecker.style.display === "none") {
+        birthdaychecker.style.display = "block";
+        birthdayresults.style.display = "none";
+    }
+    else {
+        birthdaychecker.style.display = "none";
+        birthdayresults.style.display = "block";
+    }
+}
+
+
 
 // fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
 //     .then(res => res.json())

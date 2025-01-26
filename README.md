@@ -61,5 +61,6 @@ _Mobile_
 
 # Acknowledgments and Credits
 https://codepen.io/jamesqquick/pen/XWJxBQv and YouTube video: 
+https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices 
 
 
