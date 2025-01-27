@@ -274,9 +274,18 @@ function hideBirthdayChecker() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault")
     birthdaychecker.style.display = "none"
 }
-
+function hidePageNumber() {
+    const pageNumber = document.getElementById("pagebuttons")
+    const birthdaychecker = document.getElementById("birthdaycheckdefault")
+    if (birthdaychecker.style.display = "block") {
+        pageNumber.style.display = "none"
+    } else {
+        pageNumber.style.display = "none"
+    }
+}
 async function searchVillagerBirthday() {
     showBirthdayChecker();
+    hidePageNumber();
     const day = document.getElementById("day").value
     const month = document.getElementById("month").value
     const date = `${parseInt(month)}/${parseInt(day)}`

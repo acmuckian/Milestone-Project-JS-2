@@ -54,7 +54,7 @@
 #cover-text {
   position: absolute;
   text-align: center;
-  left: 30%;
+  left: 24%;
   top: 20%;
   background-color: #98712e;
   border-radius: 15px;
@@ -248,7 +248,6 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   top: 40%;
   left: 30%;
-  font: 2.5rem;
   padding: 10px;
   background-color: #f7f7f7;
 }
@@ -261,7 +260,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #birthdaycheck {
   padding: 10px;
-  left: 31%;
+  left: 38%;
   top: 30%;
   position: absolute;
 }
@@ -290,6 +289,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+#slash {
+  color: #1aab73;
+  font-family: var(--header-font);
+}
+
 #comment {
   font-family: var(--body-font);
   color: #33c53b;
@@ -298,7 +302,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: inherit;
   top: -100px;
   left: 10%;
-  font: 2.5rem;
+  font-size: 1.2rem;
   padding: 10px;
   background-color: #095535;
 }
@@ -309,11 +313,35 @@ input[type=number]::-webkit-outer-spin-button {
   right: -100px;
 }
 
+@media (min-width:1200px) {
+  #cover-text {
+    left: 35%;
+  }
+
+  #birthdaycheck {
+    left: 43%;
+  }
+
+  #discover {
+    left: 40%;
+  }
+
+  #isabelle {
+    left: 600px;
+  }
+
+  #comment {
+    left: 600px;
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width:810px) {
   #cover-text {
     left: 20%;
   }
 
+  /* css for the birthdaychecker html */
   #birthdaycheck {
     left: 40%;
   }
@@ -350,13 +378,21 @@ input[type=number]::-webkit-outer-spin-button {
   /* css for the birthdaychecker html */
   #birthdaycheck {
     left: 20%;
-
+    margin: 5px;
   }
 
   #discover {
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
     left: 0;
     text-align: center;
+  }
+
+  #comment {
+    font-size: 0.9rem;
+    top: 0;
+    left: 0;
+    margin-left: 5px;
   }
 }
