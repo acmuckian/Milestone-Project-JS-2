@@ -65,12 +65,6 @@ async function showRandomVillager() {
  * creates a component for a single villager 
  * */
 function createVillagerComponent(villager) {
-    // return `<ul>
-    // <li>${villager.name}</li> 
-    // <img src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">
-    // <li>${villager.species}</li>
-    // <li>${villager.gender}</li>
-    // <li>${villager.personality}</li></ul>`
 
     return `
     <div class="card" style="width: 18rem;"> 
@@ -93,6 +87,12 @@ async function getRandomVillager() {
     console.log(random, randVillager)
     return randVillager
 }
+/**
+ * 
+ * @param {number} start 
+ * @param {number} end 
+ * @returns a promise containing array containing a list of villagers identified by start and end 
+ */
 async function getVillagersSlice(start, end) {
     return (await getVillagers()).slice(start, end)
 }
@@ -143,17 +143,6 @@ function assignInnerHtml(elementId, innerHTML) {
     document.getElementById(elementId).innerHTML = innerHTML;
 }
 
-function runExperiment() {
-
-    const totalPages = 9
-    const firstPage = 1
-    const pageSize = 10
-    //   console.log(getVillagerPage(1, 5))
-    // console.log(getVillagerPage(2, 5))
-    // console.log(getVillagerPage(3, 5))
-    // console.log(getVillagerPage(4, 5))
-    printVillagerPages(firstPage, totalPages, pageSize)
-}
 
 
 async function printVillagerPage() {
@@ -197,7 +186,10 @@ function printVillagerPages(firstPage, totalPages, pageSize) {
     // destination.innerHTML = 
 
 }
-
+function hideVillagerPage() {
+    const villagerPage = document.getElementById("VillagerPage")
+    villagerPage.style.display = "none"
+}
 /**
  * Handles the search input event
  *
@@ -223,7 +215,7 @@ async function handleSearchInput(e, limit = 10) {
     console.log(`${resultsCount} of ${totalResultsCount} results found`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
-
+    hideVillagerPage();
     assignInnerHtml("demo", resultsList);
 }
 
@@ -283,6 +275,8 @@ function hidePageNumber() {
         pageNumber.style.display = "none"
     }
 }
+
+
 async function searchVillagerBirthday() {
     showBirthdayChecker();
     hidePageNumber();
