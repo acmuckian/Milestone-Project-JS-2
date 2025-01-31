@@ -32,6 +32,10 @@ This button allows users to randomly generate a villager from the entire list of
 
 This allows a user to put in their birthday, or any date, and see if a villager has the same birthday as them. 
 
+## Future Features 
+
+
+
 ## Target Audience 
 The target audience of Meet the Villagers is primarily fans of the Animal Crossing series, from avid fans to more casual players of the game who would like to see information about their favourite, or just any, villager. 
 

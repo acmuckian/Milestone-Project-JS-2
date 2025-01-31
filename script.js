@@ -13,46 +13,38 @@ async function getVillagers() {
 (async () => await getVillagers())();
 
 
-
+/** a promise to find from the array a villager whose name corresponds with the search input which isn't case-sensitive
+ * @returns a villager with a matching name 
+ * @param {string} villagerName - the name entered by the user that corresponds to a villager
+ */
 async function getVillagerByName(villagerName) {
-    const villagers = await getVillagers()
+    const villagers = await getVillagers();
     for (let i = 0; i < villagers.length; i++) {
         const currentVillager = villagers[i];
-        const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase() //ensuring match is not case sensitive 
+        const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase(); //ensuring match is not case sensitive 
         if (currentVillagerNameMatch) {
-            return currentVillager
+            return currentVillager;
         }
     }
-    console.warn(`No match found for ${villagerName}`)
+    console.warn(`No match found for ${villagerName}`);
 }
 
-function villagerBrief(villager) {
-    return {
-        photoImage: villager.photoImage,
-        name: villager.name,
-        species: villager.species,
-        gender: villager.gender,
-        personality: villager.personality,
-        birthday: villager.birthday,
-
-    }
-}
-
+/** a promise to display the randomly generated villager from the array */
 async function showRandomVillager() {
     const output = document.getElementById("demo");
-    const villagerList = document.getElementById("villagersList")
-    const villagerPage = document.getElementById("VillagerPage")
-    const pagebutton = document.getElementById("pagebuttons")
+    const villagerList = document.getElementById("villagersList");
+    const villagerPage = document.getElementById("VillagerPage");
+    const pagebutton = document.getElementById("pagebuttons");
     if (output.style.display === "none") {
         output.style.display = "block";
         villagerList.style.display = "none";
         villagerPage.style.display = "none";
         pagebutton.style.display = "none";
-        const randVillager = await getRandomVillager() // gets a villager randomly from the array 
+        const randVillager = await getRandomVillager(); // gets a villager randomly from the array 
         // getting the demo element by id and ag it to the output const 
         // const intro = document.getElementById("intro")
         // intro.innerHTML = `Look who it is, it's ${villager.name}!`
-        output.innerHTML = createVillagerComponent(randVillager)
+        output.innerHTML = createVillagerComponent(randVillager);
     } else {
         output.style.display = "none";
         villagerPage.style.display = "grid";
@@ -63,6 +55,7 @@ async function showRandomVillager() {
 }
 /** 
  * creates a component for a single villager 
+ * @param {string} villager - the villager in question
  * */
 function createVillagerComponent(villager) {
 
@@ -77,15 +70,15 @@ function createVillagerComponent(villager) {
             <li class="list-group-item">Gender: ${villager.gender}</li>
             <li class="list-group-item">Personality: ${villager.personality}</li>
             <li class="list-group-item">Favourite Saying: ${villager.favoriteSaying}</li>
-        </ul></div>`
+        </ul></div>`;
 }
-
+/** a promise to generate a random villager from the array */
 async function getRandomVillager() {
-    const VillagerArray = await getVillagers()
-    const random = Math.floor(Math.random() * VillagerArray.length)
-    const randVillager = VillagerArray[random]
-    console.log(random, randVillager)
-    return randVillager
+    const VillagerArray = await getVillagers();
+    const random = Math.floor(Math.random() * VillagerArray.length);
+    const randVillager = VillagerArray[random];
+    console.log(random, randVillager);
+    return randVillager;
 }
 /**
  * 
@@ -125,7 +118,11 @@ async function displayAllVillagers() {
     }
 }
 
-// this is a function to return a page of villagers
+/** 
+ * @param {page}
+ * @param {pageSize}
+ * @returns a promise to return a page of villagers
+ *  */
 async function getVillagerPage(page, pageSize = 10) {
     const sliceStart = (page - 1) * pageSize
     const sliceEnd = sliceStart + pageSize
@@ -142,8 +139,6 @@ async function getVillagerPage(page, pageSize = 10) {
 function assignInnerHtml(elementId, innerHTML) {
     document.getElementById(elementId).innerHTML = innerHTML;
 }
-
-
 
 async function printVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage")
@@ -186,6 +181,7 @@ function printVillagerPages(firstPage, totalPages, pageSize) {
     // destination.innerHTML = 
 
 }
+/** hides the list of all villagers from view */
 function hideVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage")
     villagerPage.style.display = "none"
@@ -249,23 +245,26 @@ function buildVillagerComponentArray(villagers) {
 const searchInput = document.getElementById("searchbar");
 // Add an event listener to the input element
 searchInput.addEventListener("input", handleSearchInput)
-
+/** this function renders the birthday
+ * @param {date} the date inserted
+ */
 function renderVillagerBirthday(date) {
     const parts = date.split("/");
     const month = Number(parts[0])
     const day = Number(parts[1])
     return ` ${month}/${day}`;
 }
-
+/** shows the default front page on the birthdaychecker html  */
 function showBirthdayChecker() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault")
     birthdaychecker.style.display = "block"
 }
-
+/** hides the default front page on the birthdaychecker html  */
 function hideBirthdayChecker() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault")
     birthdaychecker.style.display = "none"
 }
+/** hides the page number keys from the page  */
 function hidePageNumber() {
     const pageNumber = document.getElementById("pagebuttons")
     const birthdaychecker = document.getElementById("birthdaycheckdefault")
@@ -276,7 +275,8 @@ function hidePageNumber() {
     }
 }
 
-
+/** a promise to search for the birthday of a corresponding villager from the dates entered
+ */
 async function searchVillagerBirthday() {
     showBirthdayChecker();
     hidePageNumber();
@@ -325,18 +325,6 @@ function showBirthdayDefault() {
 }
 
 
-
-// fetch("https://raw.githubusercontent.com/Norviah/animal-crossing/refs/heads/master/json/combined/Villagers.min.json")
-//     .then(res => res.json())
-//     .then(data => {
-//         villagers = data.map(villager => {
-//             const output = document.getElementById("demo")
-//             const card = output.classList.add("card")
-//             return { name: villager.name, species: villager.species, element: card }
-//         })
-//         let villagerName = villagers.map(villager => villager.name)
-//         console.log(villagerName)
-//     })
 
 /** @typedef {object} Translations
 * @property {string} sourceSheet
@@ -412,7 +400,3 @@ function showBirthdayDefault() {
  * @property {string[]} colors
  * @property {number} defaultClothingInternalId
  */
-// (i) look through the documents
-// (ii) get the name value from the current villager
-// (iii) see if villager's name equals the name that was searched for (consider fuzzy and partial matching later)
-// (iv) return the data if villager's name equals name searched for 
