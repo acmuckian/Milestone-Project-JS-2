@@ -1,10 +1,36 @@
 # Meet the Villagers
 
+Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about. 
 # TABLE OF CONTENTS 
 
  
-# About 
-Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about. 
+# Features 
+
+## Existing Features 
+
+### Search Bar 
+
+![image of the search bar]()
+
+*The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type. 
+
+### Show/Hide all Villagers 
+
+![image of all the villagers, paginated]()
+
+This button allows user to toggle on and off looking through all the villagers from the game Animal Crossing: New Horizons. Villagers are presented alphabetically, with 10 at a time on the page so users can look through the list by clicking on the next page. 
+
+### Random Villager 
+
+![image of a villager randomly generated]()
+
+This button allows users to randomly generate a villager from the entire list of villagers. It is a fun feature to allow users to engage with a villager they might not have considered before. 
+
+### Birthday Checker 
+
+![screenshot of the birthdaychecker html front page]()
+
+This allows a user to put in their birthday, or any date, and see if a villager has the same birthday as them. 
 
 ## Target Audience 
 The target audience of Meet the Villagers is primarily fans of the Animal Crossing series, from avid fans to more casual players of the game who would like to see information about their favourite, or just any, villager. 

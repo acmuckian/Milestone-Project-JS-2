@@ -242,14 +242,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 #discover {
   font-family: var(--header-font);
-  color: #e2cc7a;
-  border: 1px solid #e2cc7a;
+  color: #33c53b;
+  border: 1px solid #98712e;
   border-radius: 15px;
   position: absolute;
-  top: 40%;
-  left: 30%;
+  top: 32%;
+  left: 32%;
   padding: 10px;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 241, 201, 0.5);
+  font-size: 1.2rem;
+}
+
+#discover a {
+  color: #98712e;
 }
 
 #birthdaycheckdefault {
@@ -261,7 +266,7 @@ input[type=number]::-webkit-outer-spin-button {
 #birthdaycheck {
   padding: 10px;
   left: 38%;
-  top: 30%;
+  top: 37%;
   position: absolute;
 }
 
