@@ -12,7 +12,6 @@
   z-index: -1;
   position: relative;
   padding-top: 1px;
-  height: 610px;
 }
 
 #hero-outer {
@@ -108,8 +107,8 @@ h1 {
   text-align: center;
 }
 
-.hidden {
-  /*  display: none; */
+#clickybuttons button:hover {
+  transform: scale(1.1, 1.1);
 }
 
 button {
@@ -118,6 +117,8 @@ button {
   padding: 10px;
   color: #ebc449;
   border: 1px solid #ebc449;
+  font-family: 'afacad flux';
+
 }
 
 #randomvillager {
@@ -341,6 +342,18 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+@media (max-width:1024px) {
+  #clickybuttons {
+    top: 42%;
+    left: 35%;
+  }
+
+  #clickybuttons button {
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+}
+
 @media (max-width:810px) {
   #cover-text {
     left: 20%;
@@ -357,6 +370,59 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
+@media (max-width: 480px) {
+  #cover-text {
+    left: 10%;
+    top: 10%;
+    right: 10%;
+  }
+
+  #clickybuttons {
+    left: 15%;
+    top: 41%;
+    right: 5%;
+    width: 350px;
+  }
+
+  #clickybuttons button {
+    margin-bottom: 4px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  .card {
+    margin-left: 15%;
+    max-width: 375px;
+  }
+
+  .number-input {
+    margin-left: 25%;
+  }
+
+  /* css for the birthdaychecker html */
+  #birthdaycheck {
+    left: 20%;
+    margin: 5px;
+  }
+
+  #discover {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    left: 0;
+    text-align: center;
+  }
+
+  #comment {
+    font-size: 0.9rem;
+    top: 0;
+    left: 0;
+    margin-left: 5px;
+  }
+
+
+}
+
 @media (max-width: 375px) {
   #cover-text {
     left: 10%;
@@ -365,8 +431,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons {
-    left: 5%;
-    top: 41%;
+    left: 0%;
+    top: 42%;
     right: 5%;
     width: 350px;
   }

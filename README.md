@@ -87,6 +87,22 @@ _Tablet_
 _Mobile_ 
 
 
+# Technologies Used 
+**Languages Used**
+
+HTML, CSS, Javascript
+
+**Frameworks, Libraries and Programs Used** 
+
+* Git - for version control.
+* Github - to save and store files for the website.
+* Coolors - to show the colour palette for the website.
+* Google Fonts - to import the fonts on the website.
+* Online Web Fonts - to import the fonts on the website.
+* Google Dev Tools - for troubleshooting the features and the code of the website.
+* Firefox Dev Tools - for troubleshooting the features and the code of the website.
+    Canva - was used to make the logos for the website.
+* Bootstrap 
 
 
 # Acknowledgments and Credits
@@ -95,4 +111,27 @@ _Mobile_
 * [Stackoverflow thread on using hover and active for mobiles](https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices) 
 * A huge thank you to Joseph Mearman, who was very helpful during this project. 
 * _Javascript in Easy Steps (6th Edition)_ by Mike McGrath - provided a great resource for the randomiser function. 
+* MDN Docs 
 
+# Deployment 
+
+This site is deployed using GitHub Pages. Please see the deployed site here. To deploy using GitHub pages:
+
+1. Login to GitHub.
+2. Open the relevant project repository.
+3. Click on "Settings" in the navigation bar under the repository title.
+4. Click on "Pages" at the left-hand sidebar.
+5. Under "Source", choose which branch to deploy. Main is used for this repository.
+6. Choose which folder to deploy from, usually "/root".
+7. Click "Save" and wait for the deployment.
+8. The URL should be displayed above "source" and on the "Code" page, on the right-hand sidebar under the "Deployments" subheading.
+
+_Local Deployment_
+
+The repository was also cloned for local deployment. To clone the repository:
+
+1. Login to Github.
+2. Go to the repository for this project:
+3. Click on the green "Code" button on the repository main page and copy the link shown.
+4. Open the terminal in the code editor
+5. Clone the repository.
