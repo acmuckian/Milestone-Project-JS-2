@@ -89,7 +89,7 @@ async function getRandomVillager() {
 async function getVillagersSlice(start, end) {
     return (await getVillagers()).slice(start, end)
 }
-
+/** a promise to display all the villagers from the array */
 async function displayAllVillagers() {
     const elementId = "VillagerPage"
     const demo = document.getElementById("demo")
@@ -186,6 +186,13 @@ function hideVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage")
     villagerPage.style.display = "none"
 }
+/** displays the results from the search as a grid */
+function displayResultsGrid() {
+    const resultsList = document.getElementById("demo");
+    resultsList.style.display = "grid";
+    resultsList.style.gridTemplateColumns = "repeat(auto-fit, minmax(320px, 1fr))";
+    resultsList.style.gridGap = "20px";
+}
 /**
  * Handles the search input event
  *
@@ -212,7 +219,9 @@ async function handleSearchInput(e, limit = 10) {
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
     hideVillagerPage();
+    displayResultsGrid();
     assignInnerHtml("demo", resultsList);
+    
 }
 
 /**

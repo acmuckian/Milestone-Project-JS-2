@@ -121,6 +121,10 @@ button {
 
 }
 
+li {
+  list-style-type: none;
+}
+
 #randomvillager {
   font-family: 'Arvo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5em;
@@ -240,6 +244,50 @@ input[type=number]::-webkit-outer-spin-button {
   border: none;
   background-color: #fae69d;
 }
+
+#isabelle-main {
+  max-height: 400px;
+  right: -40%;
+  position: absolute;
+  top: -10%;
+}
+
+::ng-deep ngb-modal-backdrop {
+  z-index: 1050 !important;
+}
+
+#aboutModalLabel {
+  color: #98712e;
+  padding-left: 15%;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-content {
+  background-color: #fff1c0;
+}
+
+.modal-body {
+  color: #6f5527;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.btn-close {
+  color: #6f5527;
+}
+
+.btn-secondary {
+  background-color: #6f5527;
+  border: #6f5527;
+}
+
+/* css for the birthdaychecker page */
+
 
 #discover {
   font-family: var(--header-font);
