@@ -36,7 +36,7 @@ This allows a user to put in their birthday, or any date, and see if a villager 
 
 ## Future Features 
 
-
+A future feature would be to have an ability for users to add villagers to their favourites list as part of their local storage, so users can come back and see what villagers they have added and also have the ability to remove villagers if they wish. 
 
 ## Target Audience 
 The target audience of Meet the Villagers is primarily fans of the Animal Crossing series, from avid fans to more casual players of the game who would like to see information about their favourite, or just any, villager. 
@@ -118,8 +118,8 @@ HTML, CSS, Javascript
 * Online Web Fonts - to import the fonts on the website.
 * Google Dev Tools - for troubleshooting the features and the code of the website.
 * Firefox Dev Tools - for troubleshooting the features and the code of the website.
-    Canva - was used to make the logos for the website.
-* Bootstrap - 
+* Bootstrap - CSS framework used for some of the CSS and Javascript features of the website. 
+* Balsamiq - for creating the wireframes in the design stage
 
 # Testing 
 
@@ -129,6 +129,7 @@ HTML, CSS, Javascript
 
 ## Manual Testing 
 
+## User Stories Testing 
 
 
 # Acknowledgments and Credits
