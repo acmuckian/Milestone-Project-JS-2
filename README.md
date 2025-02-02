@@ -43,6 +43,20 @@ The target audience of Meet the Villagers is primarily fans of the Animal Crossi
 
 ## User Requirements and Expectations
 
+As a first-time visitor:
+
+* I want to be able to understand what the website is about.
+* If I do not know what Animal Crossing is, I want to be able to know what the game is.
+
+As a fan of the _Animal Crossing_ series in general: 
+
+* I want to be able to search for a villager by their name, or species.
+* I want to be able to access and use the website as intended on any device.
+* I want to be able to see a randomly generated villager.
+* I want to be able to put in my birthday and see if any villager's matches my birthday.
+* I want to be told if no villager happens to match my birthday. 
+
+
 # Design 
 
 ## Colour Scheme 
@@ -105,7 +119,16 @@ HTML, CSS, Javascript
 * Google Dev Tools - for troubleshooting the features and the code of the website.
 * Firefox Dev Tools - for troubleshooting the features and the code of the website.
     Canva - was used to make the logos for the website.
-* Bootstrap 
+* Bootstrap - 
+
+# Testing 
+
+## Code Validation 
+
+## Performance Testing 
+
+## Manual Testing 
+
 
 
 # Acknowledgments and Credits
