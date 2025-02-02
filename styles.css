@@ -14,6 +14,19 @@
   padding-top: 1px;
 }
 
+.btn-primary {
+  top: 5%;
+  position: absolute;
+  left: 1%;
+  background-color: #095535;
+  border: #1aab73;
+  font-family: var(--body-font);
+}
+
+.btn-primary:hover {
+  background-color: #1aab73;
+}
+
 #hero-outer {
   height: 470px;
   width: 1280px;
@@ -21,9 +34,13 @@
   position: relative;
 }
 
+#hero-image-outer {
+  height: 508px;
+}
+
 #hero-image {
   width: 100%;
-  height: 470px;
+  height: 508px;
   background: url(images/yaopey-yong-t8woJfDB1Ec-unsplash.jpg) no-repeat center center;
   z-index: 2;
   overflow: hidden;
@@ -419,6 +436,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 480px) {
+  .btn-primary {
+    top: 1%;
+    position: absolute;
+    left: 1%;
+  }
+
+  #isabelle-main {
+    display: none;
+  }
+
   #cover-text {
     left: 10%;
     top: 10%;
