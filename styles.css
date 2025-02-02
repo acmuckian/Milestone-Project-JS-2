@@ -8,7 +8,7 @@
 }
 
 #main {
-  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9)), url(images/grassfieldbackground.jpg) repeat center center;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9)), url(images/grassfieldbackground.webp) repeat center center;
   z-index: -1;
   position: relative;
   padding-top: 1px;

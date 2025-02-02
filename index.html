@@ -84,11 +84,11 @@
         <div id="pagebuttons">
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
-                    id="backarrow" placeholder=""></button>
+                    id="backarrow" placeholder="" aria-label="back arrow"></button>
                 <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
-                    onchange="printVillagerPage()">
+                    aria-label="page number" onchange="printVillagerPage()">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
-                    class="plus" id="forwardarrow"></button>
+                    class="plus" id="forwardarrow" aria-label="foward arrow"></button>
             </div>
         </div>
     </section>

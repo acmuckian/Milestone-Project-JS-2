@@ -24,10 +24,10 @@
             </div>
             <span id="discover"><a href=birthdaychecker.html>Find out which villager shares your birthday!</a></span>
 
-        </div>
+            </div>
             <div id="birthdaycheck">
-                <input type=" number" id="day" name="day" min="1" max="31" placeholder="DD" /> <span id="slash">/</span> <input
-                    type="number" id="month" name="month" min="1" max="12" placeholder="MM"/>
+                <input type=" number" id="day" name="day" min="1" max="31" placeholder="DD" /> <span id="slash">/</span>
+                <input type="number" id="month" name="month" min="1" max="12" placeholder="MM" />
                 <button onclick="searchVillagerBirthday()" id="checkbirthday">Go!</button>
             </div>
             </div>
@@ -48,11 +48,11 @@
         <div id="pagebuttons">
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
-                    id="backarrow" placeholder=""></button>
+                    id="backarrow" placeholder="" aria-label="back arrow"></button>
                 <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
-                    onchange="printVillagerPage()">
+                    aria-label="page number" onchange="printVillagerPage()">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
-                    class="plus" id="forwardarrow"></button>
+                    class="plus" id="forwardarrow" aria-label="forward arrow"></button>
             </div>
         </div>
     </section>
