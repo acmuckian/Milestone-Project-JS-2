@@ -187,6 +187,13 @@ Users are shown if a villager has their birthday, with the villager's card and a
 
 * _I want to be told if no villager happens to match my birthday._
 Users are informed if a villager does match their birthday and who, and also if no one matches their birthday.
+# Debugging 
+
+As this was my first time using Javascript there were a few bugs that had to be fixed, including using incorrect names on ids when using the .getElementById() function and using incorrect function names. 
+
+Specific bugs included: 
+
+* Not having the villager cards load initially due to the fact that printVillagerPage() which allows the individual pagination to be set up, had where the villagers would appear on the html page (#VillagerPages)'s display set to none. However initially there was an error on this due to using === instead of =, so the problem was not apparent until this was fixed. Then this line of javascript code was removed so the two could load together.
 
 # Acknowledgments and Credits
 
