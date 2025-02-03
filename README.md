@@ -133,7 +133,7 @@ HTML, CSS, Javascript
 ## Code Validation 
 
 ## Performance Testing 
-[Lighthouse]() had been used to test the performance of the website based on the four factors. 
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) had been used to test the performance of the website based on the four factors. 
 
 ### Home Page 
 _Desktop_ 
