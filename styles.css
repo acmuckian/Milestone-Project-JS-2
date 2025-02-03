@@ -124,7 +124,12 @@ h1 {
   text-align: center;
 }
 
-#clickybuttons button:hover {
+#clickybuttons button {
+  margin-bottom: 10px;
+}
+
+#clickybuttons button:hover,
+#clickybuttons a:hover {
   transform: scale(1.1, 1.1);
 }
 
@@ -136,6 +141,16 @@ button {
   border: 1px solid #ebc449;
   font-family: 'afacad flux';
 
+}
+
+#clickybuttons a {
+  background-color: #095535;
+  border-radius: 10px;
+  padding: 10px;
+  color: #ebc449;
+  border: 1px solid #ebc449;
+  font-family: 'afacad flux';
+  margin-top: 5px;
 }
 
 li {
@@ -426,7 +441,7 @@ input[type=number]::-webkit-outer-spin-button {
 
   #clickybuttons button {
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 
