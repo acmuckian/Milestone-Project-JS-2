@@ -135,6 +135,10 @@ HTML, CSS, Javascript
 
 ## Code Validation 
 
+* [Javascript validator](https://jshint.com/) - passes without errors and 11 warnings that async functions are only available on ES8. 
+* [HTML validator](https://validator.w3.org/) - passed with one warning 
+* [CSS validator](https://jigsaw.w3.org/css-validator/) - 
+* [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96 
 ## Performance Testing 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) had been used to test the performance of the website based on the four factors. 
 
@@ -155,11 +159,7 @@ _Mobile_
 ![screenshot of google lighthouse results for the mobile version]()
 
 ## Manual Testing 
-
-* [Javascript validator](https://jshint.com/) - passes without errors and 11 warnings that async functions are only available on ES8. 
-* [HTML validator](https://validator.w3.org/) - passed with one warning 
-* [CSS validator](https://jigsaw.w3.org/css-validator/) - 
-* [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96 
+![screenshot of manual testing page](images/manualtesting.png)
 
 ## User Stories Testing 
 As a first-time visitor:
