@@ -632,3 +632,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: -2px;
   }
 }
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  body {
+	background-attachment:scroll;
+  }
+}
