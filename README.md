@@ -18,7 +18,7 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 ### Show/Hide all Villagers 
 
-![image of all the villagers, paginated]()
+![image of all the villagers, paginated](images/showallvillagers.png)
 
 This button allows user to toggle on and off looking through all the villagers from the game Animal Crossing: New Horizons. Villagers are presented alphabetically, with 10 at a time on the page so users can look through the list by clicking on the next page. 
 
