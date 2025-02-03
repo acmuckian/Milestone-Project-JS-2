@@ -118,6 +118,8 @@ async function displayAllVillagers() {
     }
 }
 
+displayAllVillagers();
+
 /** 
  * @param {page}
  * @param {pageSize}
@@ -149,10 +151,9 @@ async function printVillagerPage() {
     });
     const villagerListComponent = villagerElements.join('');
     assignInnerHtml("VillagerPage", villagerListComponent);
-    villagerPage.style.display = "none";
-
 }
 printVillagerPage();
+
 /**
  * Prints all the pages of villagers
  * @param {number} firstPage - the first page to start from
@@ -326,7 +327,7 @@ function showBirthdayDefault() {
     }
 }
 
-
+displayAllVillagers();
 
 /** @typedef {object} Translations
 * @property {string} sourceSheet
