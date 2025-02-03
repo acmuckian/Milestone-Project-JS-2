@@ -100,7 +100,7 @@ a:active {
 
 h1 {
   font-family: 'FinkHeavy', Arial, Helvetica, sans-serif;
-  text-align: middle;
+  text-align: center;
   color: #ebc449;
   font-size: 4em;
 }
@@ -295,9 +295,6 @@ input[type=number]::-webkit-outer-spin-button {
   top: -10%;
 }
 
-::ng-deep ngb-modal-backdrop {
-  z-index: 1050 !important;
-}
 
 #aboutModalLabel {
   color: #98712e;
@@ -377,7 +374,7 @@ input[type=number]::-webkit-outer-spin-button {
 #sorry {
   font-family: var(--body-font);
   color: #98712e;
-  size: 1.5em;
+  font-size: 1.5em;
   text-align: center;
   background-color: #fff1c0;
   border-radius: 15px;
