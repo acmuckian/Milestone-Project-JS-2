@@ -36,7 +36,6 @@
                 <input type="number" id="month" name="month" min="1" max="12" placeholder="MM">
                 <button onclick="searchVillagerBirthday()" id="checkbirthday">Go!</button>
             </div>
-            </div>
 
         </section>
 
@@ -54,7 +53,7 @@
         <div id="pagebuttons">
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
-                    id="backarrow" placeholder="" aria-label="back arrow"></button>
+                    id="backarrow" aria-label="back arrow"></button>
                 <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
                     aria-label="page number" onchange="printVillagerPage()">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
