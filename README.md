@@ -137,7 +137,7 @@ HTML, CSS, Javascript
 
 * [Javascript validator](https://jshint.com/) - passes without errors and 11 warnings that async functions are only available on ES8. 
 * [HTML validator](https://validator.w3.org/) - passed with one warning 
-* [CSS validator](https://jigsaw.w3.org/css-validator/) - 
+* [CSS validator](https://jigsaw.w3.org/css-validator/) - no errors found
 * [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96 
 ## Performance Testing 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) had been used to test the performance of the website based on the four factors. 
