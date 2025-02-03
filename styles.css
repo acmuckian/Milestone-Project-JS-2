@@ -314,7 +314,9 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-body {
   color: #6f5527;
 }
-
+.modal-body a {
+  color:#095535;
+}
 .modal-footer {
   border: none;
 }

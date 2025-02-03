@@ -66,6 +66,9 @@ As a fan of the _Animal Crossing_ series in general:
 
 # Design 
 
+## Favicon 
+This favicon is the [Windows 11](https://emojipedia.org/sunflower#designs) emoji for a sunflower, tying in with the fun, natural theme that is reminiscient of Animal Crossing. 
+
 ## Colour Scheme 
 ![colour scheme for this website](images/Meet%20the%20Villagers.png)
 
