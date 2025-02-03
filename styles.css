@@ -5,12 +5,11 @@ body {
   margin: 0;
   height: 100%;
   background-image: url(images/grassfieldbackground.webp), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
   z-index: -1;
-  object-fit: cover;
 }
 
 :root {
@@ -588,12 +587,12 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons {
-    top: 50%;
+    top: 60%;
     left: -5%;
   }
 
   #searchbar {
-    top: 40%;
+    top: 50%;
   }
 
   #clickybuttons button {
