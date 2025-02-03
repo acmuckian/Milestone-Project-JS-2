@@ -154,7 +154,7 @@ _Mobile_
 ## Manual Testing 
 
 * [Javascript validator](https://jshint.com/) - 
-* [HTML validator](https://validator.w3.org/) - 
+* [HTML validator](https://validator.w3.org/) - passed with one warning 
 * [CSS validator](https://jigsaw.w3.org/css-validator/) - 
 * [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96 
 
