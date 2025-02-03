@@ -31,15 +31,15 @@
                 <h1><a href=birthdaychecker.html>Meet the Villagers!</a></h1>
             </div>
             <div id="searchwrap">
-                <input type="text" name="searchbar" id="searchbar" data-search
-                    placeholder="Search villagers by name, birthday, species etc." />
+                <input type="text" name="searchbar" id="searchbar" placeholder="Search villagers by name, species etc."
+                    data-search="">
             </div>
             <div id="clickybuttons">
                 <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
 
                 <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
                 <div id="villagersList"></div>
-                <button><a href="birthdaychecker.html">Who shares your birthday?</a></button>
+                <a href="birthdaychecker.html"><button>Who shares your birthday?</button></a>
             </div>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
@@ -92,7 +92,7 @@
         <div id="pagebuttons">
             <div class="number-input">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
-                    id="backarrow" placeholder="" aria-label="back arrow"></button>
+                    id="backarrow" aria-label="back arrow"></button>
                 <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
                     aria-label="page number" onchange="printVillagerPage()">
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"

@@ -133,11 +133,57 @@ HTML, CSS, Javascript
 ## Code Validation 
 
 ## Performance Testing 
+[Lighthouse]() had been used to test the performance of the website based on the four factors. 
+
+### Home Page 
+_Desktop_ 
+
+![screenshot of google lighthouse results]()
+
+_Mobile_
+![screenshot of google lighthouse results for the mobile version]()
+
+### BirthdayChecker Page
+_Desktop_ 
+
+![screenshot of google lighthouse results](images/birthdaycheckerlighthouse.png)
+
+_Mobile_
+![screenshot of google lighthouse results for the mobile version]()
 
 ## Manual Testing 
 
-## User Stories Testing 
+* [Javascript validator](https://jshint.com/) - 
+* [HTML validator](https://validator.w3.org/) - 
+* [CSS validator](https://jigsaw.w3.org/css-validator/) - 
+* [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96 
 
+## User Stories Testing 
+As a first-time visitor:
+
+* _I want to be able to understand what the website is about._
+On the top left corner there is a helpfully labelled "about the website" button which when clicked on, gives the visitor a description of the website. 
+
+* _If I do not know what Animal Crossing is, I want to be able to know what the game is._
+The "about the website" button describes what the game is about and provides a link to the website's Wikipedia page to explain further. 
+
+
+As a fan of the _Animal Crossing_ series in general: 
+
+* _I want to be able to search for a villager by their name, or species._
+This is possible with the search bar function which allows you to search and shows results as you are searching. 
+
+* _I want to be able to access and use the website as intended on any device._
+The website is responsive across different devices.
+
+* _I want to be able to see a randomly generated villager._
+When the random villager button is clicked, a random villager is generated and appears. 
+
+* _I want to be able to put in my birthday and see if any villager's matches my birthday._
+Users are shown if a villager has their birthday, with the villager's card and a little message stating which villager matched their birthday.
+
+* _I want to be told if no villager happens to match my birthday._
+Users are informed if a villager does match their birthday and who, and also if no one matches their birthday.
 
 # Acknowledgments and Credits
 

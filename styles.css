@@ -349,7 +349,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #month,
 #day {
-  width: 20%;
+
   border-radius: 15px;
   background-color: #fff1c0;
   height: 50px;
@@ -487,8 +487,9 @@ input[type=number]::-webkit-outer-spin-button {
 
   /* css for the birthdaychecker html */
   #birthdaycheck {
-    left: 20%;
+    left: 24%;
     margin: 5px;
+    top: 45%;
   }
 
   #discover {
@@ -497,15 +498,21 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: 10%;
     left: 0;
     text-align: center;
+    top: 32%;
   }
 
   #comment {
     font-size: 0.9rem;
     top: 0;
-    left: 0;
+    left: 5%;
     margin-left: 5px;
+    top: 50%;
   }
 
+  #isabelle {
+    height: 400px;
+    width: 218.81px;
+  }
 
 }
 
