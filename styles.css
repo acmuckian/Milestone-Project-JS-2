@@ -217,8 +217,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   content: '🌿';
   width: 2rem;
-  transform: translate(50%, 25%);
-  transform: rotate(180deg);
+  transform: translate(-50%, -25%) rotate(180deg);
 }
 
 #forwardarrow:after {
