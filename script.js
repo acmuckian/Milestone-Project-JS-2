@@ -87,13 +87,13 @@ async function getRandomVillager() {
  * @returns a promise containing array containing a list of villagers identified by start and end 
  */
 async function getVillagersSlice(start, end) {
-    return (await getVillagers()).slice(start, end)
+    return (await getVillagers()).slice(start, end);
 }
 /** a promise to display all the villagers from the array */
 async function displayAllVillagers() {
-    const elementId = "VillagerPage"
-    const demo = document.getElementById("demo")
-    const toggle = document.getElementById(elementId)
+    const elementId = "VillagerPage";
+    const demo = document.getElementById("demo");
+    const toggle = document.getElementById(elementId);
     if (toggle.style.display === "none") {
         // list is currently not shown 
 
@@ -102,14 +102,14 @@ async function displayAllVillagers() {
         // (i) create divs of the villagers 
         // const villagerElements = villagerSubset.map(createVillagerComponent)
         const villagerElements = villagerSubset.map((villager) => {
-            const villagerEl = createVillagerComponent(villager)
-            return `<div>${villagerEl}</div>`
-        })
+            const villagerEl = createVillagerComponent(villager);
+            return `<div>${villagerEl}</div>`;
+        });
         const villagerListComponent = villagerElements.join('');
-        assignInnerHtml(elementId, villagerListComponent)
+        assignInnerHtml(elementId, villagerListComponent);
 
         toggle.style.display = "grid";
-        demo.style.display = "none"
+        demo.style.display = "none";
 
     } else {
         // list is currently shown 
@@ -124,11 +124,11 @@ async function displayAllVillagers() {
  * @returns a promise to return a page of villagers
  *  */
 async function getVillagerPage(page, pageSize = 10) {
-    const sliceStart = (page - 1) * pageSize
-    const sliceEnd = sliceStart + pageSize
-    console.log(sliceStart, sliceEnd)
+    const sliceStart = (page - 1) * pageSize;
+    const sliceEnd = sliceStart + pageSize;
+    console.log(sliceStart, sliceEnd);
     const result = (await getVillagers()).slice(sliceStart, sliceEnd);
-    return result
+    return result;
 }
 /**
  * Assign the innerHTML of an element by its ID
@@ -141,21 +141,18 @@ function assignInnerHtml(elementId, innerHTML) {
 }
 
 async function printVillagerPage() {
-    const villagerPage = document.getElementById("VillagerPage")
-    // if (villagerPage.style.display === "none") {
-    // villagerPage.style.display === "grid"
-    const pageNumber = document.getElementById("pagenumber").value
+    const villagerPage = document.getElementById("VillagerPage");
+    const pageNumber = document.getElementById("pagenumber").value;
     const villagerElements = (await getVillagerPage(pageNumber)).map((villager) => {
-        const villagerEl = createVillagerComponent(villager)
-        return `<div>${villagerEl}</div>`
-    })
+        const villagerEl = createVillagerComponent(villager);
+        return `<div>${villagerEl}</div>`;
+    });
     const villagerListComponent = villagerElements.join('');
-    assignInnerHtml("VillagerPage", villagerListComponent)
-    // } else {
-    villagerPage.style.display === "none";
-    // }
+    assignInnerHtml("VillagerPage", villagerListComponent);
+    villagerPage.style.display = "none";
+
 }
-printVillagerPage()
+printVillagerPage();
 /**
  * Prints all the pages of villagers
  * @param {number} firstPage - the first page to start from
@@ -165,26 +162,25 @@ printVillagerPage()
  */
 function printVillagerPages(firstPage, totalPages, pageSize) {
     // creates empty results array to hold all the results 
-    const results = []
+    const results = [];
     // increases the value of the first page in the function by 1 each time from firstPage to totalPages 
     for (let i = firstPage; i <= totalPages; i++) {
         // assign the data of the function getVillagerPage to the const page 
-        const page = getVillagerPage(i, pageSize)
+        const page = getVillagerPage(i, pageSize);
         // logs out this data 
         // console.log(page)
         // puts this data into the array 
-        results.push(page)
-        console.log(results.length)
+        results.push(page);
+        console.log(results.length);
     }
-    console.log(results)
-    const destination = document.getElementById("displayVillagers")
-    // destination.innerHTML = 
+    console.log(results);
+
 
 }
 /** hides the list of all villagers from view */
 function hideVillagerPage() {
-    const villagerPage = document.getElementById("VillagerPage")
-    villagerPage.style.display = "none"
+    const villagerPage = document.getElementById("VillagerPage");
+    villagerPage.style.display = "none";
 }
 /** displays the results from the search as a grid */
 function displayResultsGrid() {
@@ -199,8 +195,8 @@ function displayResultsGrid() {
  * @param {Event} e - the event object
  */
 async function handleSearchInput(e, limit = 10) {
-    const searchInput = e.target.value
-    const villagersArray = await getVillagers()
+    const searchInput = e.target.value;
+    const villagersArray = await getVillagers();
 
     const lowerCaseSearchInput = searchInput.toLowerCase();
     const results = villagersArray.filter((villagerItem) => {
@@ -213,7 +209,7 @@ async function handleSearchInput(e, limit = 10) {
     const resultsSlice = results.slice(0, limit);
 
     const resultsCount = resultsSlice.length;
-    const totalResultsCount = results.length
+    const totalResultsCount = results.length;
 
     console.log(`${resultsCount} of ${totalResultsCount} results found`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
@@ -221,7 +217,7 @@ async function handleSearchInput(e, limit = 10) {
     hideVillagerPage();
     displayResultsGrid();
     assignInnerHtml("demo", resultsList);
-    
+
 }
 
 /**
@@ -233,9 +229,6 @@ async function handleSearchInput(e, limit = 10) {
 
 function arrayToUl(array) {
     const wrappedElements = array.map((item) => `<li>${item}</li>`);
-    const style = `
-		list-style-type: none;
-	`;
     return `<ul>
 		${wrappedElements.join("")}
 	</ul>`;
@@ -253,34 +246,34 @@ function buildVillagerComponentArray(villagers) {
 // Get input element from the DOM
 const searchInput = document.getElementById("searchbar");
 // Add an event listener to the input element
-searchInput.addEventListener("input", handleSearchInput)
+searchInput.addEventListener("input", handleSearchInput);
 /** this function renders the birthday
  * @param {date} the date inserted
  */
 function renderVillagerBirthday(date) {
     const parts = date.split("/");
-    const month = Number(parts[0])
-    const day = Number(parts[1])
+    const month = Number(parts[0]);
+    const day = Number(parts[1]);
     return ` ${month}/${day}`;
 }
 /** shows the default front page on the birthdaychecker html  */
 function showBirthdayChecker() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault")
-    birthdaychecker.style.display = "block"
+    const birthdaychecker = document.getElementById("birthdaycheckdefault");
+    birthdaychecker.style.display = "block";
 }
 /** hides the default front page on the birthdaychecker html  */
 function hideBirthdayChecker() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault")
-    birthdaychecker.style.display = "none"
+    const birthdaychecker = document.getElementById("birthdaycheckdefault");
+    birthdaychecker.style.display = "none";
 }
 /** hides the page number keys from the page  */
 function hidePageNumber() {
-    const pageNumber = document.getElementById("pagebuttons")
-    const birthdaychecker = document.getElementById("birthdaycheckdefault")
-    if (birthdaychecker.style.display = "block") {
-        pageNumber.style.display = "none"
+    const pageNumber = document.getElementById("pagebuttons");
+    const birthdaychecker = document.getElementById("birthdaycheckdefault");
+    if (birthdaychecker.style.display === "block") {
+        pageNumber.style.display = "none";
     } else {
-        pageNumber.style.display = "none"
+        pageNumber.style.display = "none";
     }
 }
 
@@ -289,11 +282,11 @@ function hidePageNumber() {
 async function searchVillagerBirthday() {
     showBirthdayChecker();
     hidePageNumber();
-    const day = document.getElementById("day").value
-    const month = document.getElementById("month").value
-    const date = `${parseInt(month)}/${parseInt(day)}`
-    console.log(date)
-    const villagersArray = await getVillagers()
+    const day = document.getElementById("day").value;
+    const month = document.getElementById("month").value;
+    const date = `${parseInt(month)}/${parseInt(day)}`;
+    console.log(date);
+    const villagersArray = await getVillagers();
     const results = villagersArray.filter((villagerItem) => {
         return (
             villagerItem.birthday.includes(date)
@@ -303,26 +296,26 @@ async function searchVillagerBirthday() {
     const resultsSlice = results.slice(0, 10);
 
     const resultsCount = resultsSlice.length;
-    const totalResultsCount = results.length
+    const totalResultsCount = results.length;
 
     console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
     hideBirthdayChecker();
     assignInnerHtml("demo", resultsList);
-    let resultMessage
+    let resultMessage;
     if (resultsCount > 0) {
         const villager = resultsSlice[0];
-        resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`
+        resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`;
     } else {
-        resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>'
+        resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>';
     }
-    assignInnerHtml("intro", resultMessage)
+    assignInnerHtml("intro", resultMessage);
 }
 
 function showBirthdayDefault() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault")
-    const birthdayresults = document.getElementById("demo")
+    const birthdaychecker = document.getElementById("birthdaycheckdefault");
+    const birthdayresults = document.getElementById("demo");
     if (birthdaychecker.style.display === "none") {
         birthdaychecker.style.display = "block";
         birthdayresults.style.display = "none";
