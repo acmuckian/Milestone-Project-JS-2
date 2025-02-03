@@ -248,11 +248,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .card {
-  background-color: rgb(235, 196, 73);
+  background-color: #fae69d;
   border: rgb(235, 196, 73);
   text-align: center;
   font-family: var(--body-font);
   margin: 5px;
+  height: 584px;
+}
+
+.card-body {
+  height: 64px;
+  background-color: rgb(235, 196, 73);
+  flex: 0;
 }
 
 .card:hover,

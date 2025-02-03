@@ -12,7 +12,7 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 ### Search Bar 
 
-![image of the search bar]()
+![image of the search bar](images/searchbar.png)
 
 *The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type. 
 
@@ -22,17 +22,24 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 This button allows user to toggle on and off looking through all the villagers from the game Animal Crossing: New Horizons. Villagers are presented alphabetically, with 10 at a time on the page so users can look through the list by clicking on the next page. 
 
+## About the Website 
+
+![image of the modal describing the website](images/abouthesite.png)
+
+A helpful description of the website and its features that users can access in the top-left corner if they are not sure what Animal Crossing is or what the website is about.
 ### Random Villager 
 
-![image of a villager randomly generated]()
+![image of a villager randomly generated](images/randomvillager.png)
 
 This button allows users to randomly generate a villager from the entire list of villagers. It is a fun feature to allow users to engage with a villager they might not have considered before. 
 
 ### Birthday Checker 
 
-![screenshot of the birthdaychecker html front page]()
+![screenshot of the birthdaychecker html front page](images/birthdaycheckerpage.png)
 
 This allows a user to put in their birthday, or any date, and see if a villager has the same birthday as them. 
+
+
 
 ## Future Features 
 
