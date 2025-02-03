@@ -1,14 +1,15 @@
 @import url(https://db.onlinewebfonts.com/c/cd1810fafebbd3df4964112052edf871?family=FinkHeavy);
 
-html,
+html,body {
+  min-height:100%; 
+}
 body {
   margin: 0;
-  height: 100%;
   background-image: url(images/grassfieldbackground.webp), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover !important;
   z-index: -1;
 }
 
