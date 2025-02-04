@@ -475,13 +475,14 @@ input[type=number]::-webkit-outer-spin-button {
     top: 40%;
     left: 32%;
   }
-}
+
 #cover-text {
   left: 15%;
 }
 #searchbar {
   left: 13%;
   top: 32%;
+}
 }
 @media (max-width: 480px) {
   .btn-primary {
