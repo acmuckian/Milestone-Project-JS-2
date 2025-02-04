@@ -174,8 +174,8 @@ li {
 }
 
 img.card-img-top {
-  max-height: 288px;
-  max-width: 288px;
+  height: 288px;
+  width: 288px;
 }
 
 input[type="number"] {
