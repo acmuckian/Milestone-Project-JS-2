@@ -603,16 +603,16 @@ input[type=number]::-webkit-outer-spin-button {
 
   #cover-text {
     left: 10%;
-    padding: 5px;
+    padding: 10px;
     top: 10%;
   }
 
   #clickybuttons {
-    top: 60%;
+    top: 70%;
   }
 
   #searchbar {
-    top: 50%;
+    top: 60%;
   }
 
 
