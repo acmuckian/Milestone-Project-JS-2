@@ -299,9 +299,7 @@ async function searchVillagerBirthday() {
     console.log(date);
     const villagersArray = await getVillagers();
     const results = villagersArray.filter((villagerItem) => {
-        return (
-            villagerItem.birthday.includes(date)
-        );
+        return villagerItem.birthday == date
     });
 
     const resultsSlice = results.slice(0, 10);
