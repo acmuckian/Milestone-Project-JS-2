@@ -94,7 +94,7 @@ async function displayAllVillagers() {
     const elementId = "VillagerPage";
     const demo = document.getElementById("demo");
     const toggle = document.getElementById(elementId);
-    if (toggle.style.display === "none") {
+    if (toggle.style.display === "none" || !toggle.style.display) {
         // list is currently not shown 
 
         // getting a subset of the villagers only from the whole array 
@@ -253,9 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add an event listener to the input element
         searchInput.addEventListener("input", handleSearchInput);
     }
-    if (window.location.pathname === "/index.html") {
+    if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
         displayAllVillagers();
-        printVillagerPage();
+        /* printVillagerPage();*/
     }
 });
 /** this function renders the birthday
