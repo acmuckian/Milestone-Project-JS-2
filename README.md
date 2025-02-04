@@ -1,6 +1,6 @@
 # Meet the Villagers
 
-![image of the website on the am i responsive website]()
+![image of the website on the am i responsive website](assets/images/meetthevillagers.png)
 
 Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about.
 
@@ -12,25 +12,25 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 ### Search Bar
 
-![image of the search bar](images/searchbar.png)
+![image of the search bar](assets/images/searchbar.png)
 
 \*The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type.
 
 ### Show/Hide all Villagers
 
-![image of all the villagers, paginated](images/showallvillagers.png)
+![image of all the villagers, paginated](aasets/images/showallvillagers.png)
 
 This button allows user to toggle on and off looking through all the villagers from the game Animal Crossing: New Horizons. Villagers are presented alphabetically, with 10 at a time on the page so users can look through the list by clicking on the next page.
 
 ## About the Website
 
-![image of the modal describing the website](images/abouthesite.png)
+![image of the modal describing the website](assets/images/abouthesite.png)
 
 A helpful description of the website and its features that users can access in the top-left corner if they are not sure what Animal Crossing is or what the website is about.
 
 ### Random Villager
 
-![image of a villager randomly generated](images/randomvillager.png)
+![image of a villager randomly generated](assets/images/randomvillager.png)
 
 This button allows users to randomly generate a villager from the entire list of villagers. It is a fun feature to allow users to engage with a villager they might not have considered before.
 
@@ -71,7 +71,7 @@ This favicon is the [Windows 11](https://emojipedia.org/sunflower#designs) emoji
 
 ## Colour Scheme
 
-![colour scheme for this website](images/Meet%20the%20Villagers.png)
+![colour scheme for this website](assets/images/Meet%20the%20Villagers.png)
 
 The colour scheme was based on colours that predominantly feature in the game, Animal Crossing, from the colours in the logo to the grass texture.
 
@@ -88,29 +88,29 @@ The main body font used is Arvo, due to its similarities to the font, Rodin Boku
 - **Front Page**:
 
 _Desktop_
-![wireframe of the frontpage on a desktop](images/frontpagedesktop.png)
+![wireframe of the frontpage on a desktop](assets/images/frontpagedesktop.png)
 
 _Tablet_
-![wireframe of the frontpage on a tablet](images/frontpagetablet.png)
+![wireframe of the frontpage on a tablet](assets/images/frontpagetablet.png)
 
 _Mobile_
-![wireframe of the frontpage on mobile](images/frontpagemobile.png)
+![wireframe of the frontpage on mobile](assets/images/frontpagemobile.png)
 
 - **Birthday Checker**:
 
 _Desktop_
 
-![wireframe of the birthdaychecker default on desktop](images/birthdaycheckerdesktop.png)
-![wireframe when you search for a villager with a birthday](images/birthdaycheckerbdaydesktop.png)
+![wireframe of the birthdaychecker default on desktop](assets/images/birthdaycheckerdesktop.png)
+![wireframe when you search for a villager with a birthday](assets/images/birthdaycheckerbdaydesktop.png)
 
 _Tablet_
 
-![wireframe of the birthdaychecker default on tablet](images/birthdaycheckertablet.png)
-![wireframe when you search for a villager with a birthday](images/birthdaycheckersuccess.png)
+![wireframe of the birthdaychecker default on tablet](assets/images/birthdaycheckertablet.png)
+![wireframe when you search for a villager with a birthday](assets/images/birthdaycheckersuccess.png)
 
 _Mobile_
-![wireframe of the birthdaychecker default on mobile](images/mobilebirthdaydefault.png)
-![wirefame when you search for a villager with a birthday on mobile](images/birthdaycheckersuccessmobile.png)
+![wireframe of the birthdaychecker default on mobile](assets/images/mobilebirthdaydefault.png)
+![wirefame when you search for a villager with a birthday on mobile](assets/images/birthdaycheckersuccessmobile.png)
 
 # Technologies Used
 
@@ -149,7 +149,7 @@ HTML, CSS, Javascript
 
 _Desktop_
 
-![screenshot of google lighthouse results](images/lighthousemeetthevillagers.png)
+![screenshot of google lighthouse results](assets/images/lighthousemeetthevillagers.png)
 
 _Mobile_
 ![screenshot of google lighthouse results for the mobile version]()
@@ -158,14 +158,14 @@ _Mobile_
 
 _Desktop_
 
-![screenshot of google lighthouse results](images/birthdaycheckerlighthouse.png)
+![screenshot of google lighthouse results](assets/images/birthdaycheckerlighthouse.png)
 
 _Mobile_
 ![screenshot of google lighthouse results for the mobile version]()
 
 ## Manual Testing
 
-![screenshot of manual testing page](images/manualtesting.png)
+![screenshot of manual testing page](assets/images/manualtesting.png)
 
 ## User Stories Testing
 
