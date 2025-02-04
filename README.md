@@ -4,8 +4,6 @@
 
 Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about.
 
-
-
 # Features
 
 ## Existing Features
@@ -203,6 +201,8 @@ Specific bugs included:
 - Not having the villager cards load initially due to the fact that printVillagerPage() which allows the individual pagination to be set up, had where the villagers would appear on the html page (#VillagerPages)'s display set to none. However initially there was an error on this due to using === instead of =, so the problem was not apparent until this was fixed. Then this line of javascript code was removed so the two could load together.
 
 - The background-image when the dimensions were 320px x 480px would not fully cover despite background-size set to cover, this was resolved by a helpful stackoverflow comment noting that background-attachment set to fixed can cause this and to change to background-attachment to scroll instead at this dimension.
+
+- The full display of villagers was not showing up when the front page loaded as expected, and the error was in displayAllVillagers() as the condition was only where the display was set to none instead of where there was also no display set at all, so this was amended to provide for this situation as well.
 
 # Acknowledgments and Credits
 
