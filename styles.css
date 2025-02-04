@@ -631,12 +631,13 @@ input[type=number]::-webkit-outer-spin-button {
   #demo {
     margin-bottom: -2px;
   }
+  #hero-image {
+    background: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
+  }
 }
 @media only screen and (min-width : 320px) and (max-width : 480px) {
   body {
 	background-attachment:scroll;
   }
-  #hero-image {
-    background: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
-  }
+
 }
