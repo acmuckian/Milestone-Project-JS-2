@@ -118,7 +118,6 @@ async function displayAllVillagers() {
     }
 }
 
-displayAllVillagers();
 
 /** 
  * @param {page}
@@ -152,7 +151,7 @@ async function printVillagerPage() {
     const villagerListComponent = villagerElements.join('');
     assignInnerHtml("VillagerPage", villagerListComponent);
 }
-printVillagerPage();
+
 
 /**
  * Prints all the pages of villagers
@@ -247,10 +246,18 @@ function arrayToUl(array) {
 function buildVillagerComponentArray(villagers) {
     return villagers.map((result) => createVillagerComponent(result));
 }
-// Get input element from the DOM
-const searchInput = document.getElementById("searchbar");
-// Add an event listener to the input element
-searchInput.addEventListener("input", handleSearchInput);
+document.addEventListener("DOMContentLoaded", () => {
+    // Get input element from the DOM
+    const searchInput = document.getElementById("searchbar");
+    if (searchInput) {
+        // Add an event listener to the input element
+        searchInput.addEventListener("input", handleSearchInput);
+    }
+    if (window.location.pathname === "/index.html") {
+        displayAllVillagers();
+        printVillagerPage();
+    }
+});
 /** this function renders the birthday
  * @param {date} the date inserted
  */
@@ -302,7 +309,7 @@ async function searchVillagerBirthday() {
     const resultsCount = resultsSlice.length;
     const totalResultsCount = results.length;
 
-    console.log(`${resultsCount} of ${totalResultsCount} results found for ${searchInput}`);
+    console.log(`${resultsCount} of ${totalResultsCount} results found`);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
     hideBirthdayChecker();
@@ -322,17 +329,20 @@ async function searchVillagerBirthday() {
 function showBirthdayDefault() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault");
     const birthdayresults = document.getElementById("demo");
+    const villagerPage = document.getElementById("VillagerPage");
     if (birthdaychecker.style.display === "none") {
         birthdaychecker.style.display = "block";
         birthdayresults.style.display = "none";
+        villagerPage.style.display = "none";
     }
     else {
         birthdaychecker.style.display = "none";
         birthdayresults.style.display = "block";
+        villagerPage.style.display = "none";
     }
 }
 
-displayAllVillagers();
+
 
 /** @typedef {object} Translations
 * @property {string} sourceSheet
