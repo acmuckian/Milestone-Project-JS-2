@@ -4,7 +4,7 @@
 
 Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about.
 
-# TABLE OF CONTENTS
+
 
 # Features
 
@@ -14,7 +14,7 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 ![image of the search bar](assets/images/searchbar.png)
 
-\*The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type.
+The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type.
 
 ### Show/Hide all Villagers
 
@@ -152,7 +152,7 @@ _Desktop_
 ![screenshot of google lighthouse results](assets/images/lighthousemeetthevillagers.png)
 
 _Mobile_
-![screenshot of google lighthouse results for the mobile version]()
+![screenshot of google lighthouse results for the mobile version](assets/images/meetthevillagerslighthousemobile.png)
 
 ### BirthdayChecker Page
 
