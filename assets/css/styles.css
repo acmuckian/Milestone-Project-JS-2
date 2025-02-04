@@ -434,7 +434,12 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.5rem;
   }
 }
-
+@media (max-width:1280px) {
+  #clickybuttons {
+    left: 43%;
+    top: 42%;
+  }
+}
 @media (max-width:1024px) {
   #searchbar {
     top:45%; 
@@ -465,7 +470,19 @@ input[type=number]::-webkit-outer-spin-button {
     left: 32%;
   }
 }
-
+@media (max-width:768px) {
+  #clickybuttons {
+    top: 40%;
+    left: 32%;
+  }
+}
+#cover-text {
+  left: 15%;
+}
+#searchbar {
+  left: 13%;
+  top: 32%;
+}
 @media (max-width: 480px) {
   .btn-primary {
     top: 1%;
