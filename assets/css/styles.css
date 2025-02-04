@@ -493,7 +493,10 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     left: 1%;
   }
-
+  body:before {
+    content: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp);
+    display: none;
+  }
   #isabelle-main {
     display: none;
   }
@@ -626,10 +629,7 @@ h1 {
     margin-left: 5%;
 
   }
-    body:before {
-      content: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp);
-      display: none;
-    }
+
   
   /* birthday checker css */
   .birthday ul .card {
