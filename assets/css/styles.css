@@ -408,10 +408,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #isabelle {
-  max-height: 400px;
+  height: 400px;
+  width:218.81px;
   position: inherit;
   right: -100px;
 }
+
 
 @media (min-width:1200px) {
   #cover-text {
@@ -624,7 +626,11 @@ h1 {
     margin-left: 5%;
 
   }
-
+    body:before {
+      content: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp);
+      display: none;
+    }
+  
   /* birthday checker css */
   .birthday ul .card {
     padding-left: 0px;
@@ -653,7 +659,8 @@ h1 {
   #hero-image {
     background: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
   }
-}
+
+  }
 @media only screen and (min-width : 320px) and (max-width : 480px) {
   body {
 	background-attachment:scroll;
@@ -676,12 +683,4 @@ h1 {
     background: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
     background-size: cover;
   }
-
-  /* Preload the image */
-  @media (max-width: 480px) {
-    body:before {
-      content: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp);
-      display: none;
-    }
-  }
-  }
+}
