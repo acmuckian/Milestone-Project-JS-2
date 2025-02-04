@@ -608,15 +608,15 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons {
-    top: 70%;
-  }
-
-  #searchbar {
     top: 60%;
   }
 
+  #searchbar {
+    top: 50%;
+  }
+
 h1 {
-  font-size:3rem;
+  font-size:3.2rem;
 }
 
   .card {
