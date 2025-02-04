@@ -149,7 +149,7 @@ HTML, CSS, Javascript
 
 _Desktop_
 
-![screenshot of google lighthouse results]()
+![screenshot of google lighthouse results](images/lighthousemeetthevillagers.png)
 
 _Mobile_
 ![screenshot of google lighthouse results for the mobile version]()
