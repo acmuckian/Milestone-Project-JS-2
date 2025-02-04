@@ -586,6 +586,9 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 5px;
     top: 10%;
   }
+  #hero-image {
+    background-image: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
+  }
 
   #clickybuttons {
     top: 60%;
