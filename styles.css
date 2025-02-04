@@ -544,7 +544,7 @@ input[type=number]::-webkit-outer-spin-button {
     left: 0%;
     top: 42%;
     right: 5%;
-    width: 350px;
+    width: 100%;
   }
 
   .card {
@@ -585,9 +585,6 @@ input[type=number]::-webkit-outer-spin-button {
     left: 10%;
     padding: 5px;
     top: 10%;
-  }
-  #hero-image {
-    background-image: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
   }
 
   #clickybuttons {
@@ -640,6 +637,6 @@ input[type=number]::-webkit-outer-spin-button {
 	background-attachment:scroll;
   }
   #hero-image {
-    background-image: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
+    background: url(images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
   }
 }
