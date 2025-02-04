@@ -436,8 +436,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width:1024px) {
+  #searchbar {
+    top:45%; 
+  }
   #clickybuttons {
-    top: 42%;
+    top: 55%;
     left: 35%;
   }
 
@@ -488,7 +491,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons button {
-    margin-bottom: 4px;
     padding: 10px;
     margin-right: 10px;
   }
@@ -589,17 +591,13 @@ input[type=number]::-webkit-outer-spin-button {
 
   #clickybuttons {
     top: 60%;
-    left: -5%;
   }
 
   #searchbar {
     top: 50%;
   }
 
-  #clickybuttons button {
-    margin: 10px;
-    padding: 5px;
-  }
+
 
   .card {
     margin-left: 5%;
@@ -638,6 +636,20 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen and (min-width : 320px) and (max-width : 480px) {
   body {
 	background-attachment:scroll;
+  }
+  #clickybuttons button {
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  #randomButton {
+    margin-top:5px;
+    margin-bottom:0px;
+  }
+  
+  #allButton {
+    margin-bottom: 20px; 
+    margin-top: 5px;
   }
 
 }

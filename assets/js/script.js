@@ -198,27 +198,30 @@ function displayResultsGrid() {
 async function handleSearchInput(e, limit = 10) {
     const searchInput = e.target.value;
     const villagersArray = await getVillagers();
+    const nonAlphabetRegex = /[^a-zA-Z\s]/;
+    if (nonAlphabetRegex.test(searchInput)) {
+        alert('Please only insert characters of the alphabet.');
+    } else {
+        const lowerCaseSearchInput = searchInput.toLowerCase();
+        const results = villagersArray.filter((villagerItem) => {
+            return (
+                villagerItem.name.toLowerCase().includes(lowerCaseSearchInput) ||
+                villagerItem.species.toLowerCase().includes(lowerCaseSearchInput) ||
+                villagerItem.birthday.toLowerCase().includes(lowerCaseSearchInput)
+            );
+        });
+        const resultsSlice = results.slice(0, limit);
 
-    const lowerCaseSearchInput = searchInput.toLowerCase();
-    const results = villagersArray.filter((villagerItem) => {
-        return (
-            villagerItem.name.toLowerCase().includes(lowerCaseSearchInput) ||
-            villagerItem.species.toLowerCase().includes(lowerCaseSearchInput) ||
-            villagerItem.birthday.toLowerCase().includes(lowerCaseSearchInput)
-        );
-    });
-    const resultsSlice = results.slice(0, limit);
+        const resultsCount = resultsSlice.length;
+        const totalResultsCount = results.length;
 
-    const resultsCount = resultsSlice.length;
-    const totalResultsCount = results.length;
-
-    console.log(`${resultsCount} of ${totalResultsCount} results found`);
-    const resultCards = buildVillagerComponentArray(resultsSlice);
-    const resultsList = arrayToUl(resultCards);
-    hideVillagerPage();
-    displayResultsGrid();
-    assignInnerHtml("demo", resultsList);
-
+        console.log(`${resultsCount} of ${totalResultsCount} results found`);
+        const resultCards = buildVillagerComponentArray(resultsSlice);
+        const resultsList = arrayToUl(resultCards);
+        hideVillagerPage();
+        displayResultsGrid();
+        assignInnerHtml("demo", resultsList);
+    }
 }
 
 /**
@@ -308,6 +311,8 @@ async function searchVillagerBirthday() {
     if (resultsCount > 0) {
         const villager = resultsSlice[0];
         resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`;
+    } else if (date === "13/13" || date === "0/0" || date === "31/6" || date === "9/31" || date === "11/31" || date === "2/30" || date === "29/2" || date === "2/30" || date === "2/31" || date === "4/31") {
+        resultMessage = '<div id="sorry">That date is invalid...<div>';
     } else {
         resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>';
     }
