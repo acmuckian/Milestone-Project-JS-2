@@ -61,7 +61,7 @@ function createVillagerComponent(villager) {
 
     return `
     <div class="card" style="width: 18rem;"> 
-    <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}">
+    <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}" loading="lazy">
         <div class="card-body">
             <h5 class="card-title">&#10524;${villager.name}&#x291B;</h5>
             </div>
