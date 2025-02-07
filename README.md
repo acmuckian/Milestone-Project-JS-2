@@ -159,11 +159,19 @@ _Desktop_
 ![screenshot of google lighthouse results](assets/images/birthdaycheckerlighthouse.png)
 
 _Mobile_
-![screenshot of google lighthouse results for the mobile version]()
+![screenshot of google lighthouse results for the mobile version](assets/images/meetthevillagersmobilelighthouse.png)
 
 ## Manual Testing
 
+BDD was used as opposed to TDD in this instance on an approximation of the Given-When-Then situation due to the scale and size of the website.
+
 ![screenshot of manual testing page](assets/images/manualtesting.png)
+
+### Browser Compatibility
+
+Tests were performed by myself on Microsoft Edge, Firefox and Chrome where both pages performed as expected.
+
+Additionally, [Browserling](https://www.browserling.com/) was used to test Vivaldi 6.8, Opera 112, Brave 1.68 on Windows 10 were all performed as expected.
 
 ## User Stories Testing
 
@@ -206,16 +214,18 @@ Specific bugs included:
 
 # Acknowledgments and Credits
 
--[This YouTube video](https://www.youtube.com/watch?v=wxz5vJ1BWrc) was very helpful on creating a search bar. 
+-[This YouTube video](https://www.youtube.com/watch?v=wxz5vJ1BWrc) was very helpful on creating a search bar.
+
 - [Stackoverflow thread on using hover and active for mobiles](https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices).
 - [Stackoverflow thread on customising increment arrows helped greatly in customising my page numbers](https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css).
 - A huge thank you to Joseph Mearman, who was very helpful during this project.
 - _Javascript in Easy Steps (6th Edition)_ by Mike McGrath - provided a great resource for the randomiser function.
 
-_Image Credits_ 
-* [Yaopey Yong on Unsplash](https://unsplash.com/photos/a-building-with-a-pond-in-front-of-it-t8woJfDB1Ec)
-* _Animal Crossing: New Horizons_ assets from Nintendo.
-* [Green Grass Field Background](https://www.rawpixel.com/image/6030796/photo-image-background-texture-public-domain)
+_Image Credits_
+
+- [Yaopey Yong on Unsplash](https://unsplash.com/photos/a-building-with-a-pond-in-front-of-it-t8woJfDB1Ec)
+- _Animal Crossing: New Horizons_ assets from Nintendo.
+- [Green Grass Field Background](https://www.rawpixel.com/image/6030796/photo-image-background-texture-public-domain)
 
 # Deployment
 
