@@ -35,23 +35,13 @@ async function showRandomVillager() {
     const villagerList = document.getElementById("villagersList");
     const villagerPage = document.getElementById("VillagerPage");
     const pagebutton = document.getElementById("pagebuttons");
-    if (output.style.display === "none") {
+
+    if (villagerPage.style.display === "grid") {
         output.style.display = "block";
-        villagerList.style.display = "none";
         villagerPage.style.display = "none";
-        pagebutton.style.display = "none";
-        const randVillager = await getRandomVillager(); // gets a villager randomly from the array 
-        // getting the demo element by id and ag it to the output const 
-        // const intro = document.getElementById("intro")
-        // intro.innerHTML = `Look who it is, it's ${villager.name}!`
-        output.innerHTML = createVillagerComponent(randVillager);
-    } else {
-        output.style.display = "none";
-        villagerPage.style.display = "grid";
-
     }
-
-
+    const randVillager = await getRandomVillager();
+    output.innerHTML = createVillagerComponent(randVillager);
 }
 /** 
  * creates a component for a single villager 
