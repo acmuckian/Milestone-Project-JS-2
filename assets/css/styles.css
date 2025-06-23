@@ -80,7 +80,7 @@ body {
 #cover-text {
   position: absolute;
   text-align: center;
-  left: 24%;
+  left: 50%;
   top: 20%;
   background-color: #98712e;
   border-radius: 15px;
@@ -127,16 +127,19 @@ h1 {
   text-align: center;
 }
 
+
 #clickybuttons {
   position: absolute;
-  left: 40%;
-  top: 40%;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
 }
 
-#clickybuttons button {
-  margin-bottom: 10px;
-}
 
 #clickybuttons button:hover,
 #clickybuttons a:hover, #clickybuttons a:focus {
@@ -160,7 +163,6 @@ button {
   color: #ebc449;
   border: 1px solid #ebc449;
   font-family: 'afacad flux';
-  margin-top: 5px;
 }
 
 li {
@@ -250,7 +252,6 @@ input[type=number]::-webkit-outer-spin-button {
   border-width: 0 2px;
   font-size: 2rem;
   height: 3rem;
-  /* font-weight: bold; */
   text-align: center;
   color: #6f5527;
 }
@@ -437,24 +438,18 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.5rem;
   }
 }
-@media (max-width:1400px) {
+@media (max-width:1400px) and (min-width:1024px) {
   #clickybuttons {
-    left: 43%;
     top: 43%;
+    gap: 20px;
   }
 }
-@media (max-width:1024px) {
-  #searchbar {
-    top:45%; 
-  }
-  #clickybuttons {
-    top: 55%;
-    left: 35%;
-  }
 
-  #clickybuttons button {
-    margin-left: 5px;
-    margin-bottom: 10px;
+/* Tablet screens */
+@media (max-width: 1024px) {
+  #clickybuttons {
+    top: 40%;
+    gap: 20px;
   }
 }
 
@@ -476,7 +471,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width:768px) {
   #clickybuttons {
     top: 40%;
-    left: 32%;
+    gap: 16px;
   }
 
 #cover-text {
@@ -508,15 +503,14 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons {
-    left: 15%;
     top: 41%;
-    right: 5%;
-    width: 350px;
+    width: 90vw;
+    gap: 12px;
   }
 
   #clickybuttons button {
     padding: 10px;
-    margin-right: 10px;
+
   }
 
   .card {
@@ -567,10 +561,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   #clickybuttons {
-    left: 0%;
     top: 42%;
-    right: 5%;
-    width: 100%;
+    gap: 8px;
+    width: 100vw;
   }
 
   .card {
@@ -615,6 +608,7 @@ input[type=number]::-webkit-outer-spin-button {
 
   #clickybuttons {
     top: 60%;
+    gap: 6px; 
   }
 
   #searchbar {
@@ -665,20 +659,13 @@ h1 {
   body {
 	background-attachment:scroll;
   }
-  #clickybuttons button {
-    margin-bottom: 15px;
-    padding: 5px;
-    margin-left: 10px;
+  #clickybuttons {
+     flex-direction: column;
   }
-  #randomButton {
-    margin-top:5px;
-    margin-bottom:0px;
+  #clickybuttons button {
+    padding: 5px;
   }
   
-  #allButton {
-    margin-bottom: 20px; 
-    margin-top: 5px;
-  }
   #hero-image {
     background: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp) no-repeat center center;
     background-size: cover;

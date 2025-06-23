@@ -245,7 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/Milestone-Project-JS-2/") {
         displayAllVillagers();
-        /* printVillagerPage();*/
     }
 });
 /** this function renders the birthday
