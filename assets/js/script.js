@@ -32,9 +32,7 @@ async function getVillagerByName(villagerName) {
 /** a promise to display the randomly generated villager from the array */
 async function showRandomVillager() {
     const output = document.getElementById("demo");
-    const villagerList = document.getElementById("villagersList");
     const villagerPage = document.getElementById("VillagerPage");
-    const pagebutton = document.getElementById("pagebuttons");
 
     if (villagerPage.style.display === "grid") {
         output.style.display = "block";
@@ -130,15 +128,18 @@ async function getVillagerPage(page, pageSize = 10) {
 function assignInnerHtml(elementId, innerHTML) {
     document.getElementById(elementId).innerHTML = innerHTML;
 }
-
+// displays a page of villager depending on the current page 
 async function printVillagerPage() {
-    const villagerPage = document.getElementById("VillagerPage");
+    // creates a const for the current page the site is on 
     const pageNumber = document.getElementById("pagenumber").value;
+    // Fetch the villagers for the current page and create HTML for each village
     const villagerElements = (await getVillagerPage(pageNumber)).map((villager) => {
+        // Create the HTML for a single villager
         const villagerEl = createVillagerComponent(villager);
         return `<div>${villagerEl}</div>`;
     });
     const villagerListComponent = villagerElements.join('');
+    // puts the HTML generated into the div with the id VillagerPage so it is generated there
     assignInnerHtml("VillagerPage", villagerListComponent);
 }
 
@@ -150,23 +151,7 @@ async function printVillagerPage() {
  * @param {number} pageSize - the number of villagers per page
  * @deprecated 
  */
-function printVillagerPages(firstPage, totalPages, pageSize) {
-    // creates empty results array to hold all the results 
-    const results = [];
-    // increases the value of the first page in the function by 1 each time from firstPage to totalPages 
-    for (let i = firstPage; i <= totalPages; i++) {
-        // assign the data of the function getVillagerPage to the const page 
-        const page = getVillagerPage(i, pageSize);
-        // logs out this data 
-        // console.log(page)
-        // puts this data into the array 
-        results.push(page);
-        console.log(results.length);
-    }
-    console.log(results);
 
-
-}
 /** hides the list of all villagers from view */
 function hideVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage");
@@ -247,15 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayAllVillagers();
     }
 });
-/** this function renders the birthday
- * @param {date} the date inserted
- */
-function renderVillagerBirthday(date) {
-    const parts = date.split("/");
-    const month = Number(parts[0]);
-    const day = Number(parts[1]);
-    return ` ${month}/${day}`;
-}
+
 /** shows the default front page on the birthdaychecker html  */
 function showBirthdayChecker() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault");
@@ -311,22 +288,6 @@ async function searchVillagerBirthday() {
         resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>';
     }
     assignInnerHtml("intro", resultMessage);
-}
-
-function showBirthdayDefault() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault");
-    const birthdayresults = document.getElementById("demo");
-    const villagerPage = document.getElementById("VillagerPage");
-    if (birthdaychecker.style.display === "none") {
-        birthdaychecker.style.display = "block";
-        birthdayresults.style.display = "none";
-        villagerPage.style.display = "none";
-    }
-    else {
-        birthdaychecker.style.display = "none";
-        birthdayresults.style.display = "block";
-        villagerPage.style.display = "none";
-    }
 }
 
 
