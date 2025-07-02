@@ -13,21 +13,6 @@ async function getVillagers() {
 (async () => await getVillagers())();
 
 
-/** a promise to find from the array a villager whose name corresponds with the search input which isn't case-sensitive
- * @returns a villager with a matching name 
- * @param {string} villagerName - the name entered by the user that corresponds to a villager
- */
-async function getVillagerByName(villagerName) {
-    const villagers = await getVillagers();
-    for (let i = 0; i < villagers.length; i++) {
-        const currentVillager = villagers[i];
-        const currentVillagerNameMatch = currentVillager.name.toUpperCase() === villagerName.toUpperCase(); //ensuring match is not case sensitive 
-        if (currentVillagerNameMatch) {
-            return currentVillager;
-        }
-    }
-    console.warn(`No match found for ${villagerName}`);
-}
 
 /** a promise to display the randomly generated villager from the array */
 async function showRandomVillager() {

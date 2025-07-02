@@ -369,9 +369,6 @@ input[type=number]::-webkit-outer-spin-button {
   color: #33c53b;
   border: 1px solid #98712e;
   border-radius: 15px;
-  position: absolute;
-  top: 32%;
-  left: 32%;
   padding: 10px;
   background-color: rgba(255, 241, 201, 0.5);
   font-size: 1.2rem;
@@ -389,9 +386,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 #birthdaycheck {
   padding: 10px;
-  left: 38%;
-  top: 37%;
-  position: absolute;
 }
 
 #month,
