@@ -496,6 +496,12 @@ input[type=number]::-webkit-outer-spin-button {
   #clickybuttons {
     gap: 16px;
   }
+
+#cover-text:hover,
+#cover-text:focus {
+  transform: scale(1.05, 1.05);
+}
+
 }
 
 @media (max-width: 480px) {
@@ -519,6 +525,8 @@ input[type=number]::-webkit-outer-spin-button {
     top: 10%;
     right: 10%;
   }
+
+
 
   #clickybuttons {
     width: 90vw;
