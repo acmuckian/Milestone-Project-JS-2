@@ -274,9 +274,11 @@ async function searchVillagerBirthday() {
     }
     assignInnerHtml("intro", resultMessage);
 }
+document.getElementById("randomButton")?.addEventListener("click", showRandomVillager)
+document.getElementById("allButton")?.addEventListener("click", displayAllVillagers)
+document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage)
 
-
-
+document.getElementById("checkbirthday")?.addEventListener("click",searchVillagerBirthday)
 /** @typedef {object} Translations
 * @property {string} sourceSheet
 * @property {string} id
