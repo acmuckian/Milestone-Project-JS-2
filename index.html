@@ -36,9 +36,9 @@
                         placeholder="Search villagers by name, species etc." data-search="">
                 </div>
                 <div id="clickybuttons">
-                    <button onclick="showRandomVillager()" id="randomButton">Random Villager!</button>
+                    <button id="randomButton">Random Villager!</button>
 
-                    <button onclick="displayAllVillagers()" id="allButton">Show/Hide all Villagers!</button>
+                    <button id="allButton">Show/Hide all Villagers!</button>
                     <a id="bdaybutton" href="birthdaychecker.html">Who shares your birthday?</a>
                 </div>
             </div>
@@ -95,11 +95,11 @@
         <div id="displayVillagers" class="hidden"></div>
         <div id="pagebuttons">
             <div class="number-input">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();printVillagerPage()"
+                <button
                     id="backarrow" aria-label="back arrow"></button>
                 <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
-                    aria-label="page number" onchange="printVillagerPage()">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();printVillagerPage()"
+                    aria-label="page number">
+                <button
                     class="plus" id="forwardarrow" aria-label="foward arrow"></button>
             </div>
         </div>

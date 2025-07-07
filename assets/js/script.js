@@ -276,7 +276,19 @@ async function searchVillagerBirthday() {
 }
 document.getElementById("randomButton")?.addEventListener("click", showRandomVillager)
 document.getElementById("allButton")?.addEventListener("click", displayAllVillagers)
-document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage)
+document.getElementById("backarrow")?.addEventListener("click", function () {
+  const input = this.parentNode.querySelector('input[type=number]');
+  input.stepDown();
+  printVillagerPage();
+});
+
+document.getElementById("forwardarrow")?.addEventListener("click", function () {
+  const input = this.parentNode.querySelector('input[type=number]');
+  input.stepUp();
+  printVillagerPage();
+});
+
+document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage);
 
 document.getElementById("checkbirthday")?.addEventListener("click",searchVillagerBirthday)
 /** @typedef {object} Translations
