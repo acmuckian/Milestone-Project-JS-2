@@ -33,7 +33,8 @@ async function showRandomVillager() {
 function createVillagerComponent(villager) {
 
     return `
-    <div class="card" style="width: 18rem;"> 
+    <div class="flex-column align-items-center justify-content-center">
+    <div class="card mx-auto" style="width: 18rem;"> 
     <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}" loading="lazy">
         <div class="card-body">
             <h5 class="card-title">&#10524;${villager.name}&#x291B;</h5>
@@ -43,7 +44,7 @@ function createVillagerComponent(villager) {
             <li class="list-group-item">Gender: ${villager.gender}</li>
             <li class="list-group-item">Personality: ${villager.personality}</li>
             <li class="list-group-item">Favourite Saying: ${villager.favoriteSaying}</li>
-        </ul></div>`;
+        </ul></div></div>`;
 }
 /** a promise to generate a random villager from the array */
 async function getRandomVillager() {
@@ -250,7 +251,7 @@ async function searchVillagerBirthday() {
     console.log(date);
     const villagersArray = await getVillagers();
     const results = villagersArray.filter((villagerItem) => {
-        return villagerItem.birthday == date
+        return villagerItem.birthday == date;
     });
 
     const resultsSlice = results.slice(0, 10);
@@ -274,8 +275,8 @@ async function searchVillagerBirthday() {
     }
     assignInnerHtml("intro", resultMessage);
 }
-document.getElementById("randomButton")?.addEventListener("click", showRandomVillager)
-document.getElementById("allButton")?.addEventListener("click", displayAllVillagers)
+document.getElementById("randomButton")?.addEventListener("click", showRandomVillager);
+document.getElementById("allButton")?.addEventListener("click", displayAllVillagers);
 document.getElementById("backarrow")?.addEventListener("click", function () {
   const input = this.parentNode.querySelector('input[type=number]');
   input.stepDown();
@@ -290,7 +291,7 @@ document.getElementById("forwardarrow")?.addEventListener("click", function () {
 
 document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage);
 
-document.getElementById("checkbirthday")?.addEventListener("click",searchVillagerBirthday)
+document.getElementById("checkbirthday")?.addEventListener("click",searchVillagerBirthday);
 /** @typedef {object} Translations
 * @property {string} sourceSheet
 * @property {string} id

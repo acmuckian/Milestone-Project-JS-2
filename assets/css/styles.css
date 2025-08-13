@@ -7,7 +7,7 @@ body {
 
 body {
   margin: 0;
-  background-image: url(../images/grassfieldbackground.webp), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
+  background-image: url(../images/art-institute-of-chicago-3KnjeYTo9Gk-unsplash.jpg), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -32,6 +32,7 @@ body {
   background-color: #095535;
   border: #1aab73;
   font-family: var(--body-font);
+  z-index:2;
 }
 
 .btn-primary:hover {
@@ -370,12 +371,12 @@ input[type=number]::-webkit-outer-spin-button {
   border: 1px solid #98712e;
   border-radius: 15px;
   padding: 10px;
-  background-color: rgba(255, 241, 201, 0.5);
+  background-color: #095535;
   font-size: 1.2rem;
 }
 
 #discover a {
-  color: #98712e;
+  color: #fff1c0;
 }
 
 #birthdaycheckdefault {
