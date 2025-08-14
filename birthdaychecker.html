@@ -39,7 +39,47 @@
                     <button id="checkbirthday">Go!</button>
                 </div>
             </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                About this website
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="aboutModalLabel">&#127804;Welcome to Meet the
+                                Villagers!&#127804;</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <b>Meet the Villagers</b> is a friendly website for all those who enjoy <a
+                                    href="https://en.wikipedia.org/wiki/Animal_Crossing:_New_Horizons"
+                                    target="_blank"><i>Animal
+                                        Crossing:
+                                        New Horizons</i></a>, looking
+                                to learn more about the characters that we have so much fun living with in our village,
+                                or
+                                for fans of other series in the franchise who want to see
+                                who makes an appearance in this game, or for anyone curious about getting into the
+                                franchise.
+                            </p>
+                            <p> We hope you have fun looking through this website, such as discovering a random
+                                villager,
+                                checking to see which villager shares your birthday or just seeing all the villagers
+                                that
+                                make up this game. </p>
+                            <img src="assets/images/Isabelle_NH.webp" alt="isabelle from animal crossing new horizons"
+                                id="isabelle-main" loading="lazy">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </header>
@@ -52,14 +92,6 @@
             <span id="comment">Who will it be?</span>
             <img src="assets/images/Isabelle_NH.webp" alt="isabelle from animal crossing new horizons" id="isabelle"
                 loading="lazy">
-        </div>
-        <div id="pagebuttons">
-            <div class="number-input">
-                <button id="backarrow" aria-label="back arrow"></button>
-                <input class="quantity" min="0" name="quantity" value="1" type="number" id="pagenumber"
-                    aria-label="page number">
-                <button class="plus" id="forwardarrow" aria-label="forward arrow"></button>
-            </div>
         </div>
     </section>
     <script src="assets/js/script.js" defer></script>

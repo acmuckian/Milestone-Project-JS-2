@@ -114,6 +114,31 @@ async function getVillagerPage(page, pageSize = 10) {
 function assignInnerHtml(elementId, innerHTML) {
     document.getElementById(elementId).innerHTML = innerHTML;
 }
+
+async function updateArrowVisibility() {
+    const backButton = document.getElementById("backarrow");
+    const forwardButton = document.getElementById("forwardarrow");
+    const pageInput = document.getElementById("pagenumber");
+    const pageSize = 10; // or your actual page size
+    const villagerArray = await getVillagers();
+    const currentPage = parseInt(pageInput.value, 10);
+    const lastPage = Math.ceil(villagerArray.length / pageSize);
+
+    // Hide back arrow on first page, show otherwise
+    if (currentPage <= 1) {
+        backButton.style.display = "none";
+    } else {
+        backButton.style.display = "";
+    }
+
+    // Hide forward arrow on last page, show otherwise
+    if (currentPage >= lastPage) {
+        forwardButton.style.display = "none";
+    } else {
+        forwardButton.style.display = "";
+    }
+}
+
 // displays a page of villager depending on the current page 
 async function printVillagerPage() {
     // creates a const for the current page the site is on 
@@ -127,6 +152,8 @@ async function printVillagerPage() {
     const villagerListComponent = villagerElements.join('');
     // puts the HTML generated into the div with the id VillagerPage so it is generated there
     assignInnerHtml("VillagerPage", villagerListComponent);
+    updateArrowVisibility();
+
 }
 
 
@@ -155,7 +182,7 @@ function displayResultsGrid() {
  *
  * @param {Event} e - the event object
  */
-async function handleSearchInput(e, limit = 10) {
+async function handleSearchInput(e, limit = 200) {
     const searchInput = e.target.value;
     const villagersArray = await getVillagers();
     const nonAlphabetRegex = /[^a-zA-Z\s]/;
@@ -180,6 +207,7 @@ async function handleSearchInput(e, limit = 10) {
         const resultsList = arrayToUl(resultCards);
         hideVillagerPage();
         displayResultsGrid();
+        hidePageNumber();
         assignInnerHtml("demo", resultsList);
     }
 }
@@ -192,10 +220,11 @@ async function handleSearchInput(e, limit = 10) {
  */
 
 function arrayToUl(array) {
-    const wrappedElements = array.map((item) => `<li>${item}</li>`);
-    return `<ul>
-		${wrappedElements.join("")}
-	</ul>`;
+    return array.join("");
+    // const wrappedElements = array.map((item) => `<li>${item}</li>`);
+    // return `<ul>
+	// 	${wrappedElements.join("")}
+	// </ul>`;
 }
 
 /**
@@ -209,6 +238,7 @@ function buildVillagerComponentArray(villagers) {
 }
 document.addEventListener("DOMContentLoaded", () => {
     // Get input element from the DOM
+    updateArrowVisibility()
     const searchInput = document.getElementById("searchbar");
     if (searchInput) {
         // Add an event listener to the input element
@@ -232,13 +262,9 @@ function hideBirthdayChecker() {
 /** hides the page number keys from the page  */
 function hidePageNumber() {
     const pageNumber = document.getElementById("pagebuttons");
-    const birthdaychecker = document.getElementById("birthdaycheckdefault");
-    if (birthdaychecker.style.display === "block") {
-        pageNumber.style.display = "none";
-    } else {
-        pageNumber.style.display = "none";
-    }
+    pageNumber.style.display = "none";
 }
+
 
 /** a promise to search for the birthday of a corresponding villager from the dates entered
  */
@@ -268,26 +294,32 @@ async function searchVillagerBirthday() {
     if (resultsCount > 0) {
         const villager = resultsSlice[0];
         resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`;
-    } else if (date === "13/13" || date === "0/0" || date === "31/6" || date === "9/31" || date === "11/31" || date === "2/30" || date === "29/2" || date === "2/30" || date === "2/31" || date === "4/31") {
+    } else if (date === "13/13" || date === "0/0" || date === "31/6" || date === "9/31" || date === "11/31" || date === "2/30" || date === "29/2" || date === "2/30" || date === "2/31" || date === "4/31" || date === NaN) {
         resultMessage = '<div id="sorry">That date is invalid...<div>';
     } else {
         resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>';
     }
     assignInnerHtml("intro", resultMessage);
 }
+
+
 document.getElementById("randomButton")?.addEventListener("click", showRandomVillager);
 document.getElementById("allButton")?.addEventListener("click", displayAllVillagers);
 document.getElementById("backarrow")?.addEventListener("click", function () {
   const input = this.parentNode.querySelector('input[type=number]');
   input.stepDown();
   printVillagerPage();
+  updateArrowVisibility();
 });
 
 document.getElementById("forwardarrow")?.addEventListener("click", function () {
   const input = this.parentNode.querySelector('input[type=number]');
   input.stepUp();
   printVillagerPage();
+  updateArrowVisibility();
 });
+
+
 
 document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage);
 
