@@ -258,35 +258,35 @@ function hidePageNumber() {
  */
 async function searchVillagerBirthday() {
     showBirthdayChecker();
-    const day = document.getElementById("day").value;
-    const month = document.getElementById("month").value;
-    const date = `${parseInt(month)}/${parseInt(day)}`;
-    console.log(date);
+    const day = parseInt(document.getElementById("day").value, 10);
+    const month = parseInt(document.getElementById("month").value, 10);
+
+    // Validate date
+    const isValidDate = (month >= 1 && month <= 12) &&
+                        (day >= 1 && day <= 31) &&
+                        !isNaN(day) && !isNaN(month) &&
+                        (new Date(2020, month - 1, day).getDate() === day);
+
+    const date = `${month}/${day}`;
     const villagersArray = await getVillagers();
-    const results = villagersArray.filter((villagerItem) => {
-        return villagerItem.birthday == date;
-    });
-
+    const results = villagersArray.filter((villagerItem) => villagerItem.birthday == date);
     const resultsSlice = results.slice(0, 10);
-
     const resultsCount = resultsSlice.length;
-    const totalResultsCount = results.length;
+    let resultMessage;
 
-    console.log(`${resultsCount} of ${totalResultsCount} results found`);
+    if (!isValidDate) {
+        resultMessage = '<div id="sorry">That date is invalid...</div>';
+    } else if (resultsCount > 0) {
+        const villager = resultsSlice[0];
+        resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`;
+    } else {
+        resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...</div>';
+    }
+    assignInnerHtml("intro", resultMessage);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
     hideBirthdayChecker();
     assignInnerHtml("demo", resultsList);
-    let resultMessage;
-    if (resultsCount > 0) {
-        const villager = resultsSlice[0];
-        resultMessage = `<div id="congrats">Congrats! ${villager.name} shares your birthday &#127856;</div>`;
-    } else if (date === "13/13" || date === "0/0" || date === "31/6" || date === "9/31" || date === "11/31" || date === "2/30" || date === "29/2" || date === "2/30" || date === "2/31" || date === "4/31" || date === NaN) {
-        resultMessage = '<div id="sorry">That date is invalid...<div>';
-    } else {
-        resultMessage = '<div id="sorry">Sorry, no villagers share your birthday...<div>';
-    }
-    assignInnerHtml("intro", resultMessage);
 }
 
 
