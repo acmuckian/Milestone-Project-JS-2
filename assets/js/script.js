@@ -312,15 +312,14 @@ document.getElementById("pagenumber")?.addEventListener("change", printVillagerP
 
 document.addEventListener("DOMContentLoaded", () => {
     // Get input element from the DOM
-    updateArrowVisibility()
+    updateArrowVisibility();
+    displayAllVillagers();
     const searchInput = document.getElementById("searchbar");
     if (searchInput) {
         // Add an event listener to the input element
         searchInput.addEventListener("input", handleSearchInput);
     }
-    if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/Milestone-Project-JS-2/") {
-        displayAllVillagers();
-    }
+
     document.getElementById("checkbirthday")?.addEventListener("click", searchVillagerBirthday);
 });
 

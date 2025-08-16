@@ -53,7 +53,8 @@ As a first-time visitor:
 - I want to be able to understand what the website is about.
 - If I do not know what Animal Crossing is, I want to be able to know what the game is.
 
-As a fan of the _Animal Crossing_ series (assets/
+As a fan of the _Animal Crossing_ series:
+
 - I want to be able to search for a villager by their name, or species.
 - I want to be able to access and use the website as intended on any device.
 - I want to be able to see a randomly generated villager.
@@ -88,7 +89,7 @@ _Desktop_
 ![wireframe of the frontpage on a desktop](assets/images/frontpagedesktop.png)
 
 _Tablet_
-![wireframe of the frontpage on a tablet](assets/images/(assets/
+![wireframe of the frontpage on a tablet](assets/images/frontpagetablet.png)
 ![wireframe of the frontpage on mobile](assets/images/frontpagemobile.png)
 
 - **Birthday Checker**:
@@ -162,8 +163,36 @@ _Mobile_
 
 BDD was used as opposed to TDD in this instance on an approximation of the Given-When-Then situation due to the scale and size of the website.
 
-![screenshot of manual testing page](assets/images/manualtesting.png)
+| **Home   Page**                   |                        |                                                            |
+|-----------------------------------|------------------------|------------------------------------------------------------|
+| **Feature**                       | **Action**             | **Effect**                                                 |
+| About the website button          | click button           | Modal appears explaining what   the page is about          |
+| close button on the modal         | click button           | the modal disappears                                       |
+| random villager button            | click button           | a random villager is generated                             |
+| show/hide all villagers           | first click            | shows all villagers                                        |
+| show/hide all villagers           | second click           | hides all villagers                                        |
+| meet the villagers banner         | click button           | brings to home page                                        |
+| who   shares your birthday button | click button           | brings to birthdaychecker html                             |
+| search   bar                      | enter text             | searches for cards to match text   and shows automatically |
+| search   bar                      | enter species eg "cat" | shows all cards that have a   species of cat               |
+| forward page arrow                | click button           | brings to next page                                        |
+| back page arrow                   | click button           | brings to the previous page                                |
+| page input                        | insert number          | brings to that page number                                 |
+| last page                         | go to page             | forward arrow disappears                                   |
+| first page                        | go to page             | back arrow disappears                                      |
+| card                              | hover                  | card scales back slowly                                    |
+| meet the villagers banner         | hover                  | banner scales upwards                                      |
 
+
+| Birthday Checker Page                                          |              |                                                                                            |
+|----------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------|
+| Feature                                                        | Action       | Effect                                                                                     |
+| enter   valid DD/MM (that matches a villager's birthday)       | click "go"   | shows a villager whose birthday   that is and a congrats message with that villager's name |
+| enter   valid DD/MM (that doesn't match a villager's birthday) | click "go"   | message says "sorry no   villagers share your birthday…"                                   |
+| About the website button                                       | click button | Modal appears explaining what   the page is about                                          |
+| close button on the modal                                      | click button | the modal disappears                                                                       |
+| enter   invalid DD/MM eg NaN                                   | click "go"   | message says "That date is   invalid…"                                                     |
+| enter   invalid DD/MM eg 31/09                                 | click "go"   | message says "That date is   invalid…"                                                     |
 ### Browser Compatibility
 
 Tests were performed by myself on Microsoft Edge, Firefox and Chrome where both pages performed as expected.
