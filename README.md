@@ -16,7 +16,7 @@ The search bar is implemented for a user-friendly experience of searching for a 
 
 ### Show/Hide all Villagers
 
-![image of all the villagers, paginated](aasets/images/showallvillagers.png)
+![image of all the villagers, paginated](assets/images/showallvillagers.png)
 
 This button allows user to toggle on and off looking through all the villagers from the game Animal Crossing: New Horizons. Villagers are presented alphabetically, with 10 at a time on the page so users can look through the list by clicking on the next page.
 
@@ -34,7 +34,7 @@ This button allows users to randomly generate a villager from the entire list of
 
 ### Birthday Checker
 
-![screenshot of the birthdaychecker html front page](images/birthdaycheckerpage.png)
+![screenshot of the birthdaychecker html](assets/images/birthdaycheckerpage.png)
 
 This allows a user to put in their birthday, or any date, and see if a villager has the same birthday as them.
 
@@ -53,8 +53,7 @@ As a first-time visitor:
 - I want to be able to understand what the website is about.
 - If I do not know what Animal Crossing is, I want to be able to know what the game is.
 
-As a fan of the _Animal Crossing_ series in general:
-
+As a fan of the _Animal Crossing_ series (assets/
 - I want to be able to search for a villager by their name, or species.
 - I want to be able to access and use the website as intended on any device.
 - I want to be able to see a randomly generated villager.
@@ -89,9 +88,7 @@ _Desktop_
 ![wireframe of the frontpage on a desktop](assets/images/frontpagedesktop.png)
 
 _Tablet_
-![wireframe of the frontpage on a tablet](assets/images/frontpagetablet.png)
-
-_Mobile_
+![wireframe of the frontpage on a tablet](assets/images/(assets/
 ![wireframe of the frontpage on mobile](assets/images/frontpagemobile.png)
 
 - **Birthday Checker**:
@@ -211,6 +208,8 @@ Specific bugs included:
 - The background-image when the dimensions were 320px x 480px would not fully cover despite background-size set to cover, this was resolved by a helpful stackoverflow comment noting that background-attachment set to fixed can cause this and to change to background-attachment to scroll instead at this dimension.
 
 - The full display of villagers was not showing up when the front page loaded as expected, and the error was in displayAllVillagers() as the condition was only where the display was set to none instead of where there was also no display set at all, so this was amended to provide for this situation as well.
+
+- The 
 
 # Acknowledgments and Credits
 
