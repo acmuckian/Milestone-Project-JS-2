@@ -88,7 +88,7 @@ async function displayAllVillagers() {
     } else {
         // list is currently shown 
         toggle.style.display = "none";
-
+         hidePageNumber();
     }
 }
 
@@ -155,7 +155,11 @@ async function printVillagerPage() {
     updateArrowVisibility();
 
 }
-
+/** hides the page number keys from the page  */
+function hidePageNumber() {
+    const pageNumber = document.getElementById("pagebuttons");
+    pageNumber.style.display = "none";
+}
 
 /**
  * Prints all the pages of villagers
@@ -169,6 +173,7 @@ async function printVillagerPage() {
 function hideVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage");
     villagerPage.style.display = "none";
+    hidePageNumber();
 }
 /** displays the results from the search as a grid */
 function displayResultsGrid() {
@@ -247,11 +252,7 @@ function hideBirthdayChecker() {
     const birthdaychecker = document.getElementById("birthdaycheckdefault");
     birthdaychecker.style.display = "none";
 }
-/** hides the page number keys from the page  */
-function hidePageNumber() {
-    const pageNumber = document.getElementById("pagebuttons");
-    pageNumber.style.display = "none";
-}
+
 
 
 /** a promise to search for the birthday of a corresponding villager from the dates entered

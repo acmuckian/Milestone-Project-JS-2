@@ -1,6 +1,9 @@
 # Meet the Villagers
 
+
 ![image of the website on the am i responsive website](assets/images/meetthevillagers.png)
+
+[Visit the live website here](https://acmuckian.github.io/Milestone-Project-JS-2/)
 
 Meet the Villagers is a user-friendly website for searching villagers from the Nintendo game Animal Crossing New Horizons. It allows users to search for villagers by their name, species, gender or other parameters and see lots of interesting details about all kinds of villagers. Users can see all villagers at once, or select a random villager to discover more about.
 
@@ -184,9 +187,9 @@ BDD was used as opposed to TDD in this instance on an approximation of the Given
 | meet the villagers banner         | hover                  | banner scales upwards                                      |
 
 
-| Birthday Checker Page                                          |              |                                                                                            |
+| **Birthday Checker Page**                                         |              |                                                                                            |
 |----------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------|
-| Feature                                                        | Action       | Effect                                                                                     |
+| **Feature**                                                        | **Action**       | **Effect**                                                                                     |
 | enter   valid DD/MM (that matches a villager's birthday)       | click "go"   | shows a villager whose birthday   that is and a congrats message with that villager's name |
 | enter   valid DD/MM (that doesn't match a villager's birthday) | click "go"   | message says "sorry no   villagers share your birthday…"                                   |
 | About the website button                                       | click button | Modal appears explaining what   the page is about                                          |
@@ -201,30 +204,16 @@ Additionally, [Browserling](https://www.browserling.com/) was used to test Vival
 
 ## User Stories Testing
 
-As a first-time visitor:
-
-- _I want to be able to understand what the website is about._
-  On the top left corner there is a helpfully labelled "about the website" button which when clicked on, gives the visitor a description of the website.
-
-- _If I do not know what Animal Crossing is, I want to be able to know what the game is._
-  The "about the website" button describes what the game is about and provides a link to the website's Wikipedia page to explain further.
-
-As a fan of the _Animal Crossing_ series in general:
-
-- _I want to be able to search for a villager by their name, or species._
-  This is possible with the search bar function which allows you to search and shows results as you are searching.
-
-- _I want to be able to access and use the website as intended on any device._
-  The website is responsive across different devices.
-
-- _I want to be able to see a randomly generated villager._
-  When the random villager button is clicked, a random villager is generated and appears.
-
-- _I want to be able to put in my birthday and see if any villager's matches my birthday._
-  Users are shown if a villager has their birthday, with the villager's card and a little message stating which villager matched their birthday.
-
-- _I want to be told if no villager happens to match my birthday._
-  Users are informed if a villager does match their birthday and who, and also if no one matches their birthday.
+| User   Stories                                                                                                                                    | Feature                                                                                             |
+|---------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| As a   first time visitor, I want to be able to understand what the website is   about.                                                           | ![screenshot of modal about   page](assets/images/abouthesite.png)                                 |
+| As a   first time visitor,  if I do not know   what Animal Crossing is, I want to be able to know what the game is.                               |        ![image of the modal describing the website](assets/images/abouthesite.png)                  |
+| As a   fan of the series/regular user of the site, I want to be able to search for a   villager by their name, or species.                        | ![screenshot of search by   cat](assets/images/searchbycatspecies.png)                              |
+| As a   fan of the series/regular user of the site, I want to see a whole list of   species and move through the list by page.                     | ![image of all the villagers,   paginated](assets/images/showallvillagers.png)                      |
+|        As a fan of the series/regular user of the site, I want to be able to access   and use the website as intended on any device.              | ![screenshot of am i responsive   dev](assets/images/meetthevillagers.png)                          |
+| As a   fan of the series/regular user of the site, I want to be able to see a   randomly generated villager with the show random villager button. | ![screenshot of a random   villager](assets/images/randomvillager.png)                              |
+| As a fan of the series/regular user of the site, I want to see which villager does   match my birthday and their details.                       | ![screenshot of a villager   matching someone's birthday](assets/images/birthdaysuccessmessage.png) |
+| As a   fan of the series/regular user of the site, I want to be told if no villager   happens to match my birthday.                               | ![screenshot of message when no   villager has birthday](assets/images/novillagerhasbday.png)        |
 
 # Debugging
 
@@ -232,13 +221,13 @@ As this was my first time using Javascript there were a few bugs that had to be 
 
 Specific bugs included:
 
-- Not having the villager cards load initially due to the fact that printVillagerPage() which allows the individual pagination to be set up, had where the villagers would appear on the html page (#VillagerPages)'s display set to none. However initially there was an error on this due to using === instead of =, so the problem was not apparent until this was fixed. Then this line of javascript code was removed so the two could load together.
-
-- The background-image when the dimensions were 320px x 480px would not fully cover despite background-size set to cover, this was resolved by a helpful stackoverflow comment noting that background-attachment set to fixed can cause this and to change to background-attachment to scroll instead at this dimension.
-
-- The full display of villagers was not showing up when the front page loaded as expected, and the error was in displayAllVillagers() as the condition was only where the display was set to none instead of where there was also no display set at all, so this was amended to provide for this situation as well.
-
-- The showRandomVillager() page required two clicks before a villager was randomly generated. This was fixed by changing the style.display of the elements as initially the output would be hidden and then on the second click, it would show. I used the breakpoints on dev tools to help figure out that this was causing the requirement for a second click of the button. 
+| **Bug**                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | **Fix**                                                                                                                                                                                             |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        Not having the villager cards load initially due to the fact that   printVillagerPage() which allows the individual pagination to be set up, had   where the villagers would appear on the html page (#VillagerPages)'s display   set to none. | Initially there was an error on this due to using ===   instead of =, so the problem was not apparent until this was fixed. Then this   line of javascript code was removed so the two could load together.                                                                                     |
+| The  background-image when the dimensions were 320px x 480px would not fully cover despite background-size set to cover.                                                                                                                                    |  this was resolved by a helpful stackoverflow   comment noting that background-attachment set to fixed can cause this and to   change to background-attachment to scroll instead at this dimension |
+| The   full display of villagers was not showing up when the front page loaded as   expected.                                                                                                                                    |     this error was in displayAllVillagers() as the condition was   only where the display was set to none instead of where there was also no   display set at all, so this was amended to provide for this situation as   well.                                                                                                                                                                                                        |
+| The   showRandomVillager() page required two clicks before a villager was randomly   generated. This was fixed by changing the style.display of the elements as   initially the output would be hidden and then on the second click, it would   show.                                                                      | I used the breakpoints on dev   tools to help figure out that this was causing the requirement for a second   click of the button.                                                                 |
+| Clicking   the Meet All Villagers banner wouldn't show all the villagers on the home   page.                                                                                                                                                                                                                                                                                                                                                                                | showAllVillagers() function was   added so that when the DOM loaded the function was called.                                                                                                       |
 
 # Acknowledgments and Credits
 
