@@ -236,18 +236,6 @@ function arrayToUl(array) {
 function buildVillagerComponentArray(villagers) {
     return villagers.map((result) => createVillagerComponent(result));
 }
-document.addEventListener("DOMContentLoaded", () => {
-    // Get input element from the DOM
-    updateArrowVisibility()
-    const searchInput = document.getElementById("searchbar");
-    if (searchInput) {
-        // Add an event listener to the input element
-        searchInput.addEventListener("input", handleSearchInput);
-    }
-    if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/Milestone-Project-JS-2/") {
-        displayAllVillagers();
-    }
-});
 
 /** shows the default front page on the birthdaychecker html  */
 function showBirthdayChecker() {
@@ -270,7 +258,6 @@ function hidePageNumber() {
  */
 async function searchVillagerBirthday() {
     showBirthdayChecker();
-    hidePageNumber();
     const day = document.getElementById("day").value;
     const month = document.getElementById("month").value;
     const date = `${parseInt(month)}/${parseInt(day)}`;
@@ -323,7 +310,20 @@ document.getElementById("forwardarrow")?.addEventListener("click", function () {
 
 document.getElementById("pagenumber")?.addEventListener("change", printVillagerPage);
 
-document.getElementById("checkbirthday")?.addEventListener("click",searchVillagerBirthday);
+document.addEventListener("DOMContentLoaded", () => {
+    // Get input element from the DOM
+    updateArrowVisibility()
+    const searchInput = document.getElementById("searchbar");
+    if (searchInput) {
+        // Add an event listener to the input element
+        searchInput.addEventListener("input", handleSearchInput);
+    }
+    if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/Milestone-Project-JS-2/") {
+        displayAllVillagers();
+    }
+    document.getElementById("checkbirthday")?.addEventListener("click", searchVillagerBirthday);
+});
+
 /** @typedef {object} Translations
 * @property {string} sourceSheet
 * @property {string} id

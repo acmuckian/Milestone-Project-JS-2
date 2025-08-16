@@ -209,7 +209,7 @@ Specific bugs included:
 
 - The full display of villagers was not showing up when the front page loaded as expected, and the error was in displayAllVillagers() as the condition was only where the display was set to none instead of where there was also no display set at all, so this was amended to provide for this situation as well.
 
-- The 
+- The showRandomVillager() page required two clicks before a villager was randomly generated. This was fixed by changing the style.display of the elements as initially the output would be hidden and then on the second click, it would show. I used the breakpoints on dev tools to help figure out that this was causing the requirement for a second click of the button. 
 
 # Acknowledgments and Credits
 
