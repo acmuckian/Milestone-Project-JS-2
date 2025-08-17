@@ -15,7 +15,7 @@ Meet the Villagers is a user-friendly website for searching villagers from the N
 
 ![image of the search bar](assets/images/searchbar.png)
 
-The search bar is implemented for a user-friendly experience of searching for a villager by their name, species or other attributes. The placeholder text helpfully tells the user that they can search for a villager by their name, species or other attributes. Villagers appear as the user starts to type.
+The search bar is implemented for a user-friendly experience of searching for a villager by their name, or species. The placeholder text helpfully tells the user that they can search for a villager by their name, or species. Villagers appear as the user starts to type.
 
 ### Show/Hide all Villagers
 
@@ -235,7 +235,7 @@ Specific bugs included:
 # Acknowledgments and Credits
 
 -[This YouTube video](https://www.youtube.com/watch?v=wxz5vJ1BWrc) was very helpful on creating a search bar.
-
+- Copilot assisted with some of the debugging and code. 
 - [Stackoverflow thread on using hover and active for mobiles](https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices).
 - [Stackoverflow thread on customising increment arrows helped greatly in customising my page numbers](https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css).
 - A huge thank you to Joseph Mearman, who was very helpful during this project.
@@ -245,7 +245,7 @@ _Image Credits_
 
 - [Yaopey Yong on Unsplash](https://unsplash.com/photos/a-building-with-a-pond-in-front-of-it-t8woJfDB1Ec)
 - _Animal Crossing: New Horizons_ assets from Nintendo.
-- [Green Grass Field Background](https://www.rawpixel.com/image/6030796/photo-image-background-texture-public-domain)
+- [Art Institute of Chicago on Unsplash](https://unsplash.com/photos/a-yellow-and-white-wallpaper-with-small-flowers-and-leaves-3KnjeYTo9Gk)
 
 # Deployment
 
