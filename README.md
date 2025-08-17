@@ -135,10 +135,10 @@ HTML, CSS, Javascript
 
 ## Code Validation
 
-- [Javascript validator](https://jshint.com/) - passes with 11 warnings that async functions are only available on ES8. JSHint does state that there are four unused variables: getVillagerByName(), showRandomVillager(), printVillagerPage(), and searchVillagerBirthday(), are used on html using the onclick
-- [HTML validator](https://validator.w3.org/) - passed with one warning
+- [Javascript validator](https://jshint.com/) - passes without warning
+- [HTML validator](https://validator.w3.org/) - passed with one warning on both pages
 - [CSS validator](https://jigsaw.w3.org/css-validator/) - no errors found
-- [Accessibility validator](https://accessibilitytest.org/) - accessibility rating of 96
+
 
 ## Performance Testing
 
