@@ -130,7 +130,7 @@ body {
   transition: transform 2s;
   width:50%;
   margin-bottom:10px;
-  min-height:120px;
+  min-height:100px;
 }
 
 a {
@@ -376,8 +376,20 @@ input[type=number]::-webkit-outer-spin-button {
   border: #6f5527;
 }
 
+#aboutModal {
+
+  min-height:400px;
+}
+
 /* css for the birthdaychecker page */
 
+#aboutModalBChead {
+color:#095535;
+}
+
+#aboutModalBC {
+  min-height:400px;
+}
 
 #discover {
   font-family: var(--header-font);
