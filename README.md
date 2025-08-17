@@ -144,6 +144,8 @@ HTML, CSS, Javascript
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) had been used to test the performance of the website based on the four factors.
 
+Critical CSS was added in-line in the html to improve performance. 
+
 ### Home Page
 
 _Desktop_
