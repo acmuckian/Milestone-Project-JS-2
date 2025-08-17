@@ -22,6 +22,7 @@ async function showRandomVillager() {
     villagerPage.style.display = "none";
     const randVillager = await getRandomVillager();
     output.innerHTML = createVillagerComponent(randVillager);
+    hidePageNumber();
 }
 /** 
  * creates a component for a single villager 

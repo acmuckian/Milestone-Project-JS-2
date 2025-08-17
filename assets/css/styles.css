@@ -384,6 +384,14 @@ input[type=number]::-webkit-outer-spin-button {
   min-height: 400px;
 }
 
+#isabelle-main {
+  height: 400px;
+  width: 218.81px;
+  right: -40%;
+  position: absolute;
+  top: -10%;
+}
+
 /* css for the birthdaychecker page */
 
 #aboutModalBChead {
@@ -551,7 +559,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 10%;
   }
 
-  section, #cover-text h1 {
+  section,
+  #cover-text h1 {
     font-size: 3.2rem;
   }
 
