@@ -61,7 +61,9 @@ async function getRandomVillager() {
 async function getVillagersSlice(start, end) {
     return (await getVillagers()).slice(start, end);
 }
-/** a promise to display all the villagers from the array */
+/** 
+ * a promise to display all the villagers from the array 
+ * */
 async function displayAllVillagers() {
     const elementId = "VillagerPage";
     const demo = document.getElementById("demo");
@@ -112,12 +114,16 @@ async function getVillagerPage(page, pageSize = 10) {
 function assignInnerHtml(elementId, innerHTML) {
     document.getElementById(elementId).innerHTML = innerHTML;
 }
-
+/**
+ * Updates the visibility of pagination arrows based on the current page.
+ * @param {number} lastPage - the last page showing villager cards 
+ * @param {number} currentPage - the page the user is currently on
+*/
 async function updateArrowVisibility() {
     const backButton = document.getElementById("backarrow");
     const forwardButton = document.getElementById("forwardarrow");
     const pageInput = document.getElementById("pagenumber");
-    const pageSize = 10; // or your actual page size
+    const pageSize = 10; 
     const villagerArray = await getVillagers();
     const currentPage = parseInt(pageInput.value, 10);
     const lastPage = Math.ceil(villagerArray.length / pageSize);
@@ -137,7 +143,9 @@ async function updateArrowVisibility() {
     }
 }
 
-// displays a page of villager depending on the current page 
+/** 
+ * displays a page of villager depending on the current page 
+ */
 async function printVillagerPage() {
     // creates a const for the current page the site is on 
     const pageNumber = document.getElementById("pagenumber").value;
@@ -153,7 +161,9 @@ async function printVillagerPage() {
     updateArrowVisibility();
 
 }
-/** hides the page number keys from the page  */
+/** 
+ * hides the page number keys from the page  
+ * */
 function hidePageNumber() {
     const pageNumber = document.getElementById("pagebuttons");
     pageNumber.style.visibility = "hidden";
@@ -164,16 +174,19 @@ function hidePageNumber() {
  * @param {number} firstPage - the first page to start from
  * @param {number} totalPages - the total number of pages
  * @param {number} pageSize - the number of villagers per page
- * @deprecated 
  */
 
-/** hides the list of all villagers from view */
+/** 
+ * hides the list of all villagers from view 
+ * */
 function hideVillagerPage() {
     const villagerPage = document.getElementById("VillagerPage");
     villagerPage.style.display = "none";
     hidePageNumber();
 }
-/** displays the results from the search as a grid */
+/** 
+ * displays the results from the search as a grid 
+ * */
 function displayResultsGrid() {
     const resultsList = document.getElementById("demo");
     resultsList.style.display = "grid";
@@ -224,10 +237,6 @@ async function handleSearchInput(e, limit = 200) {
 
 function arrayToUl(array) {
     return array.join("");
-    // const wrappedElements = array.map((item) => `<li>${item}</li>`);
-    // return `<ul>
-    // 	${wrappedElements.join("")}
-    // </ul>`;
 }
 
 /**
@@ -273,7 +282,9 @@ async function searchVillagerBirthday() {
     assignInnerHtml("demo", resultsList);
 }
 
-
+/** 
+ * decreases the page number and goes to the previous page when the user clicks on the back arrow
+ * */ 
 document.getElementById("randomButton")?.addEventListener("click", showRandomVillager);
 document.getElementById("allButton")?.addEventListener("click", displayAllVillagers);
 document.getElementById("backarrow")?.addEventListener("click", function () {
@@ -282,7 +293,9 @@ document.getElementById("backarrow")?.addEventListener("click", function () {
     printVillagerPage();
     updateArrowVisibility();
 });
-
+/** 
+ * increases the page number and moves to the next page when the user clicks on the forward arrow
+ * */ 
 document.getElementById("forwardarrow")?.addEventListener("click", function () {
     const input = this.parentNode.querySelector('input[type=number]');
     input.stepUp();
@@ -298,8 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get input element from the DOM
     if (document.getElementById("VillagerPage") && document.getElementById("pagenumber")) {
         updateArrowVisibility();
-        updateArrowVisibility();
-        displayAllVillagers();
+        printVillagerPage();
     }
     const searchInput = document.getElementById("searchbar");
     if (searchInput) {
