@@ -345,19 +345,6 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #fae69d;
 }
 
-#isabelle-main {
-  height: 400px;
-  width: 218.81px;
-  right: -40%;
-  position: absolute;
-  top: -10%;
-}
-
-#isabelle {
-  width: 218.81px;
-  height: 400px;
-}
-
 #aboutModalLabel {
   color: #98712e;
   padding-left: 15%;
@@ -426,12 +413,6 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff1c0;
 }
 
-#birthdaycheckdefault {
-  position: relative;
-  line-height: 24px;
-  display: block;
-  min-height:24px;
-}
 
 #birthdaycheck {
   padding: 10px;

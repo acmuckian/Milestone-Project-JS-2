@@ -239,19 +239,6 @@ function buildVillagerComponentArray(villagers) {
     return villagers.map((result) => createVillagerComponent(result));
 }
 
-/** shows the default front page on the birthdaychecker html  */
-function showBirthdayChecker() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault");
-    birthdaychecker.style.display = "block";
-}
-/** hides the default front page on the birthdaychecker html  */
-function hideBirthdayChecker() {
-    const birthdaychecker = document.getElementById("birthdaycheckdefault");
-    birthdaychecker.style.display = "none";
-}
-
-
-
 /** a promise to search for the birthday of a corresponding villager from the dates entered
  */
 async function searchVillagerBirthday() {
