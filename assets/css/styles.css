@@ -7,7 +7,7 @@ body {
 
 body {
   margin: 0;
-  background-image: url(../images/art-institute-of-chicago-3KnjeYTo9Gk-unsplash.jpg), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
+  background-image: url(../images/art-institute-of-chicago-3KnjeYTo9Gk-unsplash.webp), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -18,6 +18,12 @@ body {
 :root {
   --header-font: "FinkHeavy", serif;
   --body-font: "Arvo", system-ui;
+}
+
+@font-face {
+  font-family: 'FinkHeavy';
+  src: url('https://db.onlinewebfonts.com/t/cd1810fafebbd3df4964112052edf871.woff2') format('woff2');
+  font-display: swap;
 }
 
 #main {
@@ -124,6 +130,7 @@ body {
   transition: transform 2s;
   width:50%;
   margin-bottom:10px;
+  min-height:120px;
 }
 
 a {

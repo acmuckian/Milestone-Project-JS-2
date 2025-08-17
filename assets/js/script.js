@@ -18,11 +18,8 @@ async function getVillagers() {
 async function showRandomVillager() {
     const output = document.getElementById("demo");
     const villagerPage = document.getElementById("VillagerPage");
-
-    if (villagerPage.style.display === "grid") {
-        output.style.display = "block";
-        villagerPage.style.display = "none";
-    }
+    output.style.display = "block";
+    villagerPage.style.display = "none";
     const randVillager = await getRandomVillager();
     output.innerHTML = createVillagerComponent(randVillager);
 }
@@ -35,7 +32,7 @@ function createVillagerComponent(villager) {
     return `
     <div class="flex-column align-items-center justify-content-center">
     <div class="card mx-auto" style="width: 18rem;"> 
-    <img class="card-img-top" src="${villager.photoImage}" alt="A picture of ${villager.photoImage}" loading="lazy">
+    <img class="card-img-top" src="${villager.photoImage}" width="288" height="288" alt="A picture of ${villager.photoImage}" loading="lazy">
         <div class="card-body">
             <h5 class="card-title">&#10524;${villager.name}&#x291B;</h5>
             </div>
@@ -88,7 +85,7 @@ async function displayAllVillagers() {
     } else {
         // list is currently shown 
         toggle.style.display = "none";
-         hidePageNumber();
+        hidePageNumber();
     }
 }
 
@@ -158,7 +155,7 @@ async function printVillagerPage() {
 /** hides the page number keys from the page  */
 function hidePageNumber() {
     const pageNumber = document.getElementById("pagebuttons");
-    pageNumber.style.display = "none";
+    pageNumber.style.visibility = "hidden";
 }
 
 /**
@@ -228,8 +225,8 @@ function arrayToUl(array) {
     return array.join("");
     // const wrappedElements = array.map((item) => `<li>${item}</li>`);
     // return `<ul>
-	// 	${wrappedElements.join("")}
-	// </ul>`;
+    // 	${wrappedElements.join("")}
+    // </ul>`;
 }
 
 /**
@@ -264,9 +261,9 @@ async function searchVillagerBirthday() {
 
     // Validate date
     const isValidDate = (month >= 1 && month <= 12) &&
-                        (day >= 1 && day <= 31) &&
-                        !isNaN(day) && !isNaN(month) &&
-                        (new Date(2020, month - 1, day).getDate() === day);
+        (day >= 1 && day <= 31) &&
+        !isNaN(day) && !isNaN(month) &&
+        (new Date(2020, month - 1, day).getDate() === day);
 
     const date = `${month}/${day}`;
     const villagersArray = await getVillagers();
@@ -294,17 +291,17 @@ async function searchVillagerBirthday() {
 document.getElementById("randomButton")?.addEventListener("click", showRandomVillager);
 document.getElementById("allButton")?.addEventListener("click", displayAllVillagers);
 document.getElementById("backarrow")?.addEventListener("click", function () {
-  const input = this.parentNode.querySelector('input[type=number]');
-  input.stepDown();
-  printVillagerPage();
-  updateArrowVisibility();
+    const input = this.parentNode.querySelector('input[type=number]');
+    input.stepDown();
+    printVillagerPage();
+    updateArrowVisibility();
 });
 
 document.getElementById("forwardarrow")?.addEventListener("click", function () {
-  const input = this.parentNode.querySelector('input[type=number]');
-  input.stepUp();
-  printVillagerPage();
-  updateArrowVisibility();
+    const input = this.parentNode.querySelector('input[type=number]');
+    input.stepUp();
+    printVillagerPage();
+    updateArrowVisibility();
 });
 
 
@@ -313,8 +310,11 @@ document.getElementById("pagenumber")?.addEventListener("change", printVillagerP
 
 document.addEventListener("DOMContentLoaded", () => {
     // Get input element from the DOM
-    updateArrowVisibility();
-    displayAllVillagers();
+    if (document.getElementById("VillagerPage") && document.getElementById("pagenumber")) {
+        updateArrowVisibility();
+        updateArrowVisibility();
+        displayAllVillagers();
+    }
     const searchInput = document.getElementById("searchbar");
     if (searchInput) {
         // Add an event listener to the input element
