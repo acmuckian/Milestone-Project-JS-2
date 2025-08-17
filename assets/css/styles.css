@@ -557,7 +557,9 @@ section h1 {
     right: 10%;
     margin-top: 10%;
   }
-
+section h1 {
+  font-size: 3.2rem;
+}
   #cover-text h1 {
     font-size: 3.2rem;
   }
@@ -604,11 +606,6 @@ section h1 {
     left: 5%;
     margin-left: 5px;
     top: 50%;
-  }
-
-  #isabelle {
-    height: 100vw;
-
   }
 
 }
