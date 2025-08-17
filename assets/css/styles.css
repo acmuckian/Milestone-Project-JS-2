@@ -394,7 +394,9 @@ input[type=number]::-webkit-outer-spin-button {
 #aboutModalBC {
   min-height: 400px;
 }
-
+section h1 {
+  font-size: 4rem;
+}
 
 #discover {
   font-family: var(--header-font);

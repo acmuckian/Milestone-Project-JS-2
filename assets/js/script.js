@@ -242,7 +242,6 @@ function buildVillagerComponentArray(villagers) {
 /** a promise to search for the birthday of a corresponding villager from the dates entered
  */
 async function searchVillagerBirthday() {
-    showBirthdayChecker();
     const day = parseInt(document.getElementById("day").value, 10);
     const month = parseInt(document.getElementById("month").value, 10);
 
@@ -270,7 +269,6 @@ async function searchVillagerBirthday() {
     assignInnerHtml("intro", resultMessage);
     const resultCards = buildVillagerComponentArray(resultsSlice);
     const resultsList = arrayToUl(resultCards);
-    hideBirthdayChecker();
     assignInnerHtml("demo", resultsList);
 }
 
