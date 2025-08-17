@@ -394,9 +394,6 @@ input[type=number]::-webkit-outer-spin-button {
 #aboutModalBC {
   min-height: 400px;
 }
-section h1 {
-  font-size: 4rem;
-}
 
 #discover {
   font-family: var(--header-font);
@@ -542,10 +539,6 @@ section h1 {
     left: 1%;
   }
 
-  body:before {
-    content: url(../images/yaopey-yong-t8woJfDB1Ec-unsplash-resize.webp);
-    display: none;
-  }
 
   #isabelle-main {
     display: none;
@@ -557,10 +550,8 @@ section h1 {
     right: 10%;
     margin-top: 10%;
   }
-section h1 {
-  font-size: 3.2rem;
-}
-  #cover-text h1 {
+
+  section, #cover-text h1 {
     font-size: 3.2rem;
   }
 
@@ -671,7 +662,7 @@ section h1 {
 
 
   /* birthday checker css */
-  .birthday ul .card {
+  .birthday .card {
     padding-left: 0px;
     margin-bottom: 0px;
   }
@@ -685,10 +676,6 @@ section h1 {
   }
 
   #comment {
-    display: none;
-  }
-
-  .birthday #pagebuttons {
     display: none;
   }
 
