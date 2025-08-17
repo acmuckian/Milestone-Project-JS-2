@@ -187,6 +187,10 @@ h1 {
   transform: scale(1.1, 1.1);
 }
 
+#clickybuttons a, #clickybuttons button, #cover-text {
+  will-change: transform;
+}
+
 button {
   background-color: #095535;
   border-radius: 10px;
@@ -552,8 +556,12 @@ color:#095535;
     left: 10%;
     top: 10%;
     right: 10%;
+    margin-top:10%;
   }
 
+  #cover-text h1 {
+    font-size: 3.2rem;
+  }
 
 
   #clickybuttons {
