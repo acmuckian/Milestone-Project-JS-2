@@ -397,6 +397,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #aboutModalBChead {
   color: #095535;
+  font-size:1.25rem;
 }
 
 #aboutModalBC {
